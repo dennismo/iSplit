@@ -19,17 +19,18 @@ class user {
 
 class group {
     var users = [user]()
-    var tranHistory = [transactions]()
+    var tranHistory = [transaction]()
     init(){
         
     }
 }
 
 
-struct transactions{
+struct transaction{
     var tranName:String
     var payTable = [String:Double]()
     var date:Date
+    var totalAmount:Double
     init(tranName:String,names:[String],personPaid:String,payRatio:[Double],totalAmount:Double,time:Date){
         for name in names {
             if (name == personPaid){
@@ -44,5 +45,6 @@ struct transactions{
         }
         self.date = time
         self.tranName = tranName
+        self.totalAmount = totalAmount
     }
 }
