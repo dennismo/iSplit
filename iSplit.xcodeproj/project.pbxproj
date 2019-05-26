@@ -13,6 +13,9 @@
 		E656F97B2299E20200800465 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E656F97A2299E20200800465 /* Assets.xcassets */; };
 		E656F97E2299E20200800465 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E656F97C2299E20200800465 /* LaunchScreen.storyboard */; };
 		E656F9862299F06800800465 /* appBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656F9852299F06800800465 /* appBrain.swift */; };
+		E656F988229A095600800465 /* addTrans.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656F987229A095600800465 /* addTrans.swift */; };
+		E656F98A229A0B8A00800465 /* groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656F989229A0B8A00800465 /* groups.swift */; };
+		E656F98C229A0DA700800465 /* navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656F98B229A0DA700800465 /* navigation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
