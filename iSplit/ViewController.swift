@@ -17,7 +17,6 @@ class tableCell :UITableViewCell{
         date.text = trans.date.description
         amount.text = "$" + trans.totalAmount.description
     }
-    
 }
 
 
@@ -29,6 +28,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var currentGroup: UILabel!
     @IBAction func addItem(_ sender: UIButton) {
         
     }
