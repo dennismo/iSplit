@@ -13,9 +13,9 @@
 		E656F97B2299E20200800465 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E656F97A2299E20200800465 /* Assets.xcassets */; };
 		E656F97E2299E20200800465 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E656F97C2299E20200800465 /* LaunchScreen.storyboard */; };
 		E656F9862299F06800800465 /* appBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656F9852299F06800800465 /* appBrain.swift */; };
-		E656F988229A095600800465 /* addTrans.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656F987229A095600800465 /* addTrans.swift */; };
-		E656F98A229A0B8A00800465 /* groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656F989229A0B8A00800465 /* groups.swift */; };
-		E656F98C229A0DA700800465 /* navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656F98B229A0DA700800465 /* navigation.swift */; };
+		E656F988229A095600800465 /* addTransViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656F987229A095600800465 /* addTransViewController.swift */; };
+		E656F98A229A0B8A00800465 /* groupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656F989229A0B8A00800465 /* groupsViewController.swift */; };
+		E656F98C229A0DA700800465 /* navigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656F98B229A0DA700800465 /* navigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,9 +27,9 @@
 		E656F97D2299E20200800465 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E656F97F2299E20200800465 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E656F9852299F06800800465 /* appBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appBrain.swift; sourceTree = "<group>"; };
-		E656F987229A095600800465 /* addTrans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addTrans.swift; sourceTree = "<group>"; };
-		E656F989229A0B8A00800465 /* groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = groups.swift; sourceTree = "<group>"; };
-		E656F98B229A0DA700800465 /* navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navigation.swift; sourceTree = "<group>"; };
+		E656F987229A095600800465 /* addTransViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addTransViewController.swift; sourceTree = "<group>"; };
+		E656F989229A0B8A00800465 /* groupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = groupsViewController.swift; sourceTree = "<group>"; };
+		E656F98B229A0DA700800465 /* navigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,9 +65,9 @@
 				E656F9732299E20000800465 /* AppDelegate.swift */,
 				E656F9752299E20000800465 /* ViewController.swift */,
 				E656F9852299F06800800465 /* appBrain.swift */,
-				E656F987229A095600800465 /* addTrans.swift */,
-				E656F989229A0B8A00800465 /* groups.swift */,
-				E656F98B229A0DA700800465 /* navigation.swift */,
+				E656F987229A095600800465 /* addTransViewController.swift */,
+				E656F989229A0B8A00800465 /* groupsViewController.swift */,
+				E656F98B229A0DA700800465 /* navigationController.swift */,
 				E656F9772299E20000800465 /* Main.storyboard */,
 				E656F97A2299E20200800465 /* Assets.xcassets */,
 				E656F97C2299E20200800465 /* LaunchScreen.storyboard */,
@@ -148,11 +148,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E656F9762299E20000800465 /* ViewController.swift in Sources */,
-				E656F98C229A0DA700800465 /* navigation.swift in Sources */,
+				E656F98C229A0DA700800465 /* navigationController.swift in Sources */,
 				E656F9862299F06800800465 /* appBrain.swift in Sources */,
-				E656F988229A095600800465 /* addTrans.swift in Sources */,
+				E656F988229A095600800465 /* addTransViewController.swift in Sources */,
 				E656F9742299E20000800465 /* AppDelegate.swift in Sources */,
-				E656F98A229A0B8A00800465 /* groups.swift in Sources */,
+				E656F98A229A0B8A00800465 /* groupsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

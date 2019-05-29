@@ -25,26 +25,27 @@ class group {
     }
 }
 
-
 struct transaction{
     var tranName:String
     var payTable = [String:Double]()
     var date:Date
     var totalAmount:Double
     init(tranName:String,names:[String],personPaid:String,payRatio:[Double],totalAmount:Double,time:Date){
-        for name in names {
-            if (name == personPaid){
-                self.payTable[name] = totalAmount
-            }
-            else{
-                self.payTable[name] = 0
-            }
-        }
+        
         for i in names.indices {
-            self.payTable[names[i]]! -= payRatio[i] * totalAmount
+            let name = names[i]
+            let amount = name == personPaid ? totalAmount : 0
+//            if (name == personPaid){
+//                self.payTable[name] = totalAmount
+//            }
+//            else{
+//                self.payTable[name] = 0
+//            }
+            self.payTable[name] = amount - payRatio[i] * totalAmount
         }
         self.date = time
         self.tranName = tranName
         self.totalAmount = totalAmount
     }
 }
+
