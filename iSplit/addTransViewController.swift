@@ -16,7 +16,17 @@ class addViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
     }
+    @IBAction func transactionName(_ sender: UITextField) {
+    }
+    @IBAction func amountSpent(_ sender: UITextField) {
+    }
+    @IBAction func dateofPurchase(_ sender: UIDatePicker) {
+    }
+    @IBOutlet weak var splitPicker: UIPickerView!
     override var shouldAutorotate: Bool {
         return true
     }
