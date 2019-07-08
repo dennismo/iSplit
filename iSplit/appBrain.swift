@@ -24,7 +24,6 @@ class group {
         
     }
 }
-
 struct transaction{
     var tranName:String
     var payTable = [String:Double]()
