@@ -15,20 +15,28 @@ class grouptableCell :UITableViewCell{
     @IBOutlet weak var groupIcon: UIImageView!
     @IBAction func selectGroup(_ sender: UIButton) {
     }
+    func setgroupTable(name:String, image:UIImage){
+        groupName.text = name
+        groupIcon.image = image
+    }
 }
 
 
 class groupsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    var groups = [group]()
+    public var groups = [group]()
     
     @IBAction func doneGroup(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     @IBAction func addGroup(_ sender: UIButton) {
+        let addGroupVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "addGroupViewController") as! addGroupViewController
+        addGroupVC.parentVC = self
+        self.present(addGroupVC, animated: true, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     override var shouldAutorotate: Bool {
         return true
@@ -55,7 +63,7 @@ extension groupsViewController: UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let g = groups[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "transaction") as! tableCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Groups") as! tableCell
 //        cell.setTransaction(trans: g)
         return cell
     }

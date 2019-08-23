@@ -11,7 +11,6 @@ import UIKit
 class addViewController: UIViewController {
 
     @IBAction func addTransactionButton(_ sender: UIButton) {
-//        print("dismissed!")
         dismiss(animated: true, completion: nil)
     }
     override func viewDidLoad() {

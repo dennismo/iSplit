@@ -34,12 +34,6 @@ class ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let skView = view as! View
-//        skView.ignoresSiblingOrder = true
-//        skView.showsFPS = true
-//        skView.showsNodeCount = true
-//        scene.scaleMode = .resizeFill
-//        skView.presentScene(scene)
         
 //        let addStoryBoard = UIStoryboard(name:"Add View Controller", bundle: Bundle.main)
 //        guard addStoryBoard.instantiateViewController(withIdentifier:  "addViewController") is addViewController else {
@@ -64,7 +58,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func groups(_ sender: UIButton) {
-        
+        let GroupsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "groupsViewController") as! groupsViewController
+        self.navigationController?.pushViewController(GroupsVC, animated: true)
     }
     @IBOutlet weak var purchases: UITableView!
     

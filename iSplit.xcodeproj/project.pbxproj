@@ -16,6 +16,7 @@
 		E656F988229A095600800465 /* addTransViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656F987229A095600800465 /* addTransViewController.swift */; };
 		E656F98A229A0B8A00800465 /* groupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656F989229A0B8A00800465 /* groupsViewController.swift */; };
 		E656F98C229A0DA700800465 /* navigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656F98B229A0DA700800465 /* navigationController.swift */; };
+		E6A5888B230F39DE00A7C9AE /* addGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A5888A230F39DE00A7C9AE /* addGroupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		E656F987229A095600800465 /* addTransViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addTransViewController.swift; sourceTree = "<group>"; };
 		E656F989229A0B8A00800465 /* groupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = groupsViewController.swift; sourceTree = "<group>"; };
 		E656F98B229A0DA700800465 /* navigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navigationController.swift; sourceTree = "<group>"; };
+		E6A5888A230F39DE00A7C9AE /* addGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addGroupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				E656F987229A095600800465 /* addTransViewController.swift */,
 				E656F989229A0B8A00800465 /* groupsViewController.swift */,
 				E656F98B229A0DA700800465 /* navigationController.swift */,
+				E6A5888A230F39DE00A7C9AE /* addGroupViewController.swift */,
 				E656F9772299E20000800465 /* Main.storyboard */,
 				E656F97A2299E20200800465 /* Assets.xcassets */,
 				E656F97C2299E20200800465 /* LaunchScreen.storyboard */,
@@ -152,6 +155,7 @@
 				E656F9862299F06800800465 /* appBrain.swift in Sources */,
 				E656F988229A095600800465 /* addTransViewController.swift in Sources */,
 				E656F9742299E20000800465 /* AppDelegate.swift in Sources */,
+				E6A5888B230F39DE00A7C9AE /* addGroupViewController.swift in Sources */,
 				E656F98A229A0B8A00800465 /* groupsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

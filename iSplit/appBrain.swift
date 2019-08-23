@@ -18,10 +18,14 @@ class user {
 }
 
 class group {
+    var groupName:String
     var users = [user]()
     var tranHistory = [transaction]()
-    init(){
-        
+    init(name:String,members:[String]){
+        groupName = name
+        for u in members {
+            users.append(user(name: u))
+        }
     }
 }
 struct transaction{
