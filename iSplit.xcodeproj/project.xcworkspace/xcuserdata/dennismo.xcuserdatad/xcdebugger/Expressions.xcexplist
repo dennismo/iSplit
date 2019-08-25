@@ -3,10 +3,21 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "ViewController.tableView(_:cellForRowAt:):ViewController.swift">
+      </ContextState>
+      <ContextState
          contextName = "groupsViewController.addGroup(_:):groupsViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "navigationController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "groupsViewController.viewDidAppear(_:):groupsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "bank">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

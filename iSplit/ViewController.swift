@@ -8,6 +8,8 @@
 
 import UIKit
 
+var bank = centralBank()
+
 class tableCell :UITableViewCell{
     @IBOutlet weak var transName: UILabel!
     @IBOutlet weak var date: UILabel!
@@ -25,7 +27,7 @@ class ViewController: UIViewController {
 //    lazy var scene = StartScene(size: view.bounds.size)
 //    var groups = [group]()
     var trans = [transaction]()
-
+    var curGroup:group?
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var currentGroup: UILabel!
@@ -61,6 +63,7 @@ class ViewController: UIViewController {
         let GroupsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "groupsViewController") as! groupsViewController
         self.navigationController?.pushViewController(GroupsVC, animated: true)
     }
+    
     @IBOutlet weak var purchases: UITableView!
     
     override var shouldAutorotate: Bool {
@@ -83,13 +86,15 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return trans.count
+        return bank.currGroup?.tranHistory.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let t = trans[indexPath.row]
+        let t = bank.currGroup?.tranHistory[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "transaction") as! tableCell
-        cell.setTransaction(trans: t)
+        if ((t) != nil){
+            cell.setTransaction(trans: t!)
+        }
         return cell
     }
 }

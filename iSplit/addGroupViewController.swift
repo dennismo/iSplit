@@ -1,14 +1,13 @@
 import UIKit
 
 class addGroupViewController: UIViewController {
-    
-    weak var parentVC:groupsViewController!
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
     }
     
     @IBAction func addGroupButton(_ sender: UIButton) {
-        parentVC.groups.append(group(name: groupName.text ?? "", members: stringToNames(s: memberName.text!)))
+    bank.groups.append(group(name: groupName.text ?? "", members: stringToNames(s: memberName.text!)))
+        
         dismiss(animated: true, completion: nil)
     }
     func stringToNames(s:String) -> [String]{

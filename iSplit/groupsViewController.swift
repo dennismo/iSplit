@@ -9,15 +9,20 @@
 import UIKit
 
 class grouptableCell :UITableViewCell{
-
+    @IBOutlet weak var memberNames: UILabel!
+    
     @IBOutlet weak var groupName: UILabel!
     
     @IBOutlet weak var groupIcon: UIImageView!
     @IBAction func selectGroup(_ sender: UIButton) {
+        UIAlertAction.init(title: "Hi", style: UIAlertAction.Style.default, handler: nil)
+        print("Select Button is Pressed")
     }
-    func setgroupTable(name:String, image:UIImage){
-        groupName.text = name
-        groupIcon.image = image
+    weak var cellGroup:group?
+    func setgroupTable(group: group){
+        groupName.text = group.groupName
+        groupIcon.image = group.groupImage
+        memberNames.text = group.getMembers()
     }
 }
 
@@ -31,12 +36,18 @@ class groupsViewController: UIViewController {
     }
     @IBAction func addGroup(_ sender: UIButton) {
         let addGroupVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "addGroupViewController") as! addGroupViewController
-        addGroupVC.parentVC = self
         self.present(addGroupVC, animated: true, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        tableView.dataSource = self
+        tableView.delegate = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated);
+        tableView.reloadData()
     }
     override var shouldAutorotate: Bool {
         return true
@@ -58,13 +69,13 @@ class groupsViewController: UIViewController {
 }
 extension groupsViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return groups.count
+        return bank.groups.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let g = groups[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Groups") as! tableCell
-//        cell.setTransaction(trans: g)
+        let g = bank.groups[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Groups") as! grouptableCell
+        cell.setgroupTable(group: g)
         return cell
     }
 }

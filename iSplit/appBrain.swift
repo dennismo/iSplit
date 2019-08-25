@@ -6,7 +6,7 @@
 //  Copyright © 2019 Dennis Mo. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class user {
     var name:String
@@ -19,6 +19,7 @@ class user {
 
 class group {
     var groupName:String
+    var groupImage:UIImage?
     var users = [user]()
     var tranHistory = [transaction]()
     init(name:String,members:[String]){
@@ -27,6 +28,15 @@ class group {
             users.append(user(name: u))
         }
     }
+    func getMembers()->String{
+        var temp:String = ""
+        for u in users {
+            temp.append(u.name)
+            temp.append(" ")
+        }
+        return temp
+    }
+    
 }
 struct transaction{
     var tranName:String
@@ -49,6 +59,17 @@ struct transaction{
         self.date = time
         self.tranName = tranName
         self.totalAmount = totalAmount
+    }
+}
+
+class centralBank{
+    var groups:[group]
+    var currGroup:group?
+    func newTransaction(trans:transaction){
+        currGroup?.tranHistory.insert(trans, at: 0)
+    }
+    init(){
+        groups = []
     }
 }
 
