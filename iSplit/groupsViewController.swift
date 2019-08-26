@@ -15,7 +15,6 @@ class grouptableCell :UITableViewCell{
     
     @IBOutlet weak var groupIcon: UIImageView!
     @IBAction func selectGroup(_ sender: UIButton) {
-        UIAlertAction.init(title: "Hi", style: UIAlertAction.Style.default, handler: nil)
         print("Select Button is Pressed")
     }
     weak var cellGroup:group?
