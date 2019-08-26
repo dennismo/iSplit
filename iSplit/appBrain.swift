@@ -43,7 +43,12 @@ struct transaction{
     var payTable = [String:Double]()
     var date:Date
     var totalAmount:Double
-    init(tranName:String,names:[String],personPaid:String,payRatio:[Double],totalAmount:Double,time:Date){
+    init(){
+        tranName = ""
+        date = Date()
+        totalAmount = 0
+    }
+    mutating func setTrans(tranName:String,names:[String],personPaid:String,payRatio:[Double],totalAmount:Double,time:Date){
         
         for i in names.indices {
             let name = names[i]
@@ -54,21 +59,31 @@ struct transaction{
 //            else{
 //                self.payTable[name] = 0
 //            }
-            self.payTable[name] = amount - payRatio[i] * totalAmount
+            payTable[name] = amount - payRatio[i] * totalAmount
         }
-        self.date = time
+        date = time
         self.tranName = tranName
         self.totalAmount = totalAmount
     }
 }
 
-class centralBank{
+class centralBank:NSCoding{
+    
+
+    
     var groups:[group]
     var currGroup:group?
     func newTransaction(trans:transaction){
         currGroup?.tranHistory.insert(trans, at: 0)
     }
     init(){
+        groups = []
+    }
+    func encode(with aCoder: NSCoder) {
+        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
         groups = []
     }
 }

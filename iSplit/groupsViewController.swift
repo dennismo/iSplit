@@ -15,10 +15,11 @@ class grouptableCell :UITableViewCell{
     
     @IBOutlet weak var groupIcon: UIImageView!
     @IBAction func selectGroup(_ sender: UIButton) {
-        print("Select Button is Pressed")
+        bank.currGroup = cellGroup
     }
-    weak var cellGroup:group?
+    var cellGroup:group?
     func setgroupTable(group: group){
+        cellGroup = group
         groupName.text = group.groupName
         groupIcon.image = group.groupImage
         memberNames.text = group.getMembers()

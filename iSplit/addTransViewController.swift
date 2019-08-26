@@ -9,7 +9,8 @@
 import UIKit
 
 class addViewController: UIViewController {
-
+    var options:[String] = []
+    var trans:transaction = transaction()
     @IBAction func addTransactionButton(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
@@ -18,6 +19,12 @@ class addViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
         tap.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tap)
+        
+        for u in (bank.currGroup?.users)!  {
+            options.append(u.name + " paid and split equally")
+        }
+        splitPicker.delegate = self
+        
     }
     @IBAction func transactionName(_ sender: UITextField) {
     }
@@ -26,6 +33,8 @@ class addViewController: UIViewController {
     @IBAction func dateofPurchase(_ sender: UIDatePicker) {
     }
     @IBOutlet weak var splitPicker: UIPickerView!
+    
+
     override var shouldAutorotate: Bool {
         return true
     }
@@ -43,4 +52,21 @@ class addViewController: UIViewController {
         return false
     }
 
+}
+
+extension addViewController:UIPickerViewDelegate, UIPickerViewDataSource{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return options.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return options[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+    }
+    
 }

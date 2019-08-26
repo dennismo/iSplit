@@ -26,12 +26,23 @@ class ViewController: UIViewController {
     
 //    lazy var scene = StartScene(size: view.bounds.size)
 //    var groups = [group]()
-    var trans = [transaction]()
-    var curGroup:group?
+    
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var currentGroup: UILabel!
     @IBAction func addItem(_ sender: UIButton) {
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if (bank.currGroup == nil){
+            currentGroup.text = "Select a Group First"
+        }
+        else{
+            currentGroup.text = "Current Group: " + bank.currGroup!.groupName
+        }
+            
         
     }
     override func viewDidLoad() {
@@ -41,7 +52,7 @@ class ViewController: UIViewController {
 //        guard addStoryBoard.instantiateViewController(withIdentifier:  "addViewController") is addViewController else {
 //            return
 //        }
-        trans = createTrans()
+        //bank = UserDefaults.standard.object(forKey: "bank") as? centralBank ?? centralBank()
         tableView.dataSource = self
         tableView.delegate = self
     }
@@ -49,13 +60,12 @@ class ViewController: UIViewController {
     func createTrans()->[transaction]{
         var tempTrans = [transaction]()
         
-        let t1 = transaction(tranName: "tran1", names: ["Dennis","Stellar","Maxwell"], personPaid: "Dennis", payRatio: [0.333,0.333,0.333], totalAmount: 100, time:Date.init(timeIntervalSinceNow: 0))
-        let t2 = transaction(tranName: "Food Basics", names: ["Dennis","Stellar","Maxwell"], personPaid: "Stellar", payRatio: [0.2,0.4,0.4], totalAmount: 50, time:Date.init(timeIntervalSinceNow: 100))
-        let t3 = transaction(tranName: "Lunch", names: ["Dennis","Stellar","Maxwell"], personPaid: "Maxwell", payRatio: [0.1,0.9,0], totalAmount: 25, time: Date.init(timeIntervalSinceNow: 1000))
-        
-        tempTrans.append(t1)
-        tempTrans.append(t2)
-        tempTrans.append(t3)
+//        let t1 = transaction(tranName: "tran1", names: ["Dennis","Stellar","Maxwell"], personPaid: "Dennis", payRatio: [0.333,0.333,0.333], totalAmount: 100, time:Date.init(timeIntervalSinceNow: 0))
+//        let t2 = transaction(tranName: "Food Basics", names: ["Dennis","Stellar","Maxwell"], personPaid: "Stellar", payRatio: [0.2,0.4,0.4], totalAmount: 50, time:Date.init(timeIntervalSinceNow: 100))
+//        let t3 = transaction(tranName: "Lunch", names: ["Dennis","Stellar","Maxwell"], personPaid: "Maxwell", payRatio: [0.1,0.9,0], totalAmount: 25, time: Date.init(timeIntervalSinceNow: 1000))
+//        tempTrans.append(t1)
+//        tempTrans.append(t2)
+//        tempTrans.append(t3)
         return tempTrans
     }
     
