@@ -42,6 +42,7 @@ class ViewController: UIViewController {
         else{
             currentGroup.text = "Current Group: " + bank.currGroup!.groupName
         }
+        tableView.reloadData()
             
         
     }
@@ -53,6 +54,8 @@ class ViewController: UIViewController {
 //            return
 //        }
         //bank = UserDefaults.standard.object(forKey: "bank") as? centralBank ?? centralBank()
+        bank.groups.append(group(name: "Group", members:["Dennis","Bill","Yifei","Timmy"]))
+        bank.currGroup = bank.groups[0]
         tableView.dataSource = self
         tableView.delegate = self
     }

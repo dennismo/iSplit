@@ -12,6 +12,7 @@ class addViewController: UIViewController {
     var options:[String] = []
     var trans:transaction = transaction()
     @IBAction func addTransactionButton(_ sender: UIButton) {
+        bank.currGroup?.tranHistory.append(trans)
         dismiss(animated: true, completion: nil)
     }
     override func viewDidLoad() {
@@ -24,13 +25,15 @@ class addViewController: UIViewController {
             options.append(u.name + " paid and split equally")
         }
         splitPicker.delegate = self
-        
     }
     @IBAction func transactionName(_ sender: UITextField) {
+        trans.tranName = sender.text ?? ""
     }
     @IBAction func amountSpent(_ sender: UITextField) {
+        trans.totalAmount = Double(sender.text!)!
     }
     @IBAction func dateofPurchase(_ sender: UIDatePicker) {
+        trans.date = sender.date
     }
     @IBOutlet weak var splitPicker: UIPickerView!
     
@@ -66,7 +69,15 @@ extension addViewController:UIPickerViewDelegate, UIPickerViewDataSource{
         return options[row]
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
+        trans.payTable.removeAll()
+        for i in 0...bank.currGroup!.users.count - 1 {
+            if(i == row){
+                trans.payTable.append(1.0)
+            }
+            else{
+                trans.payTable.append(-1.0 / Double((bank.currGroup!.users.count - 1)))
+            }
+        }
     }
     
 }

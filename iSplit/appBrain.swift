@@ -40,30 +40,13 @@ class group {
 }
 struct transaction{
     var tranName:String
-    var payTable = [String:Double]()
+    var payTable = [Double]()
     var date:Date
     var totalAmount:Double
     init(){
         tranName = ""
         date = Date()
         totalAmount = 0
-    }
-    mutating func setTrans(tranName:String,names:[String],personPaid:String,payRatio:[Double],totalAmount:Double,time:Date){
-        
-        for i in names.indices {
-            let name = names[i]
-            let amount = name == personPaid ? totalAmount : 0
-//            if (name == personPaid){
-//                self.payTable[name] = totalAmount
-//            }
-//            else{
-//                self.payTable[name] = 0
-//            }
-            payTable[name] = amount - payRatio[i] * totalAmount
-        }
-        date = time
-        self.tranName = tranName
-        self.totalAmount = totalAmount
     }
 }
 
