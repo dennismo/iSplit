@@ -6,7 +6,7 @@ class addGroupViewController: UIViewController {
     }
 
     @IBAction func addGroupButton(_ sender: UIButton) {
-    bank.groups.append(Group(name: groupName.text ?? "", members: stringToNames(s: memberName.text!)))
+        bank.groups.append(Group(name: groupName.text ?? "", members: stringToNames(s: memberName.text ?? "")))
 
         dismiss(animated: true, completion: nil)
     }
