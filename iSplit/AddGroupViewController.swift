@@ -7,7 +7,7 @@
 //
 import UIKit
 
-class addGroupViewController: UIViewController {
+class AddGroupViewController: UIViewController {
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
     }

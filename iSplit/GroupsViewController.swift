@@ -33,7 +33,7 @@ class GroupsViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func addGroup(_ sender: UIButton) {
-        let addGroupVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "addGroupViewController") as! addGroupViewController
+        let addGroupVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "addGroupViewController") as! AddGroupViewController
         self.present(addGroupVC, animated: true, completion: nil)
     }
 

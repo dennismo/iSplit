@@ -16,7 +16,7 @@
 		E656F988229A095600800465 /* AddTransViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656F987229A095600800465 /* AddTransViewController.swift */; };
 		E656F98A229A0B8A00800465 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656F989229A0B8A00800465 /* GroupsViewController.swift */; };
 		E656F98C229A0DA700800465 /* navigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656F98B229A0DA700800465 /* navigationController.swift */; };
-		E6A5888B230F39DE00A7C9AE /* addGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A5888A230F39DE00A7C9AE /* addGroupViewController.swift */; };
+		E6A5888B230F39DE00A7C9AE /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A5888A230F39DE00A7C9AE /* AddGroupViewController.swift */; };
 		E6C02D49231726B700FEBEAB /* groupDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C02D48231726B700FEBEAB /* groupDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,7 +32,7 @@
 		E656F987229A095600800465 /* AddTransViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransViewController.swift; sourceTree = "<group>"; };
 		E656F989229A0B8A00800465 /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
 		E656F98B229A0DA700800465 /* navigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navigationController.swift; sourceTree = "<group>"; };
-		E6A5888A230F39DE00A7C9AE /* addGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addGroupViewController.swift; sourceTree = "<group>"; };
+		E6A5888A230F39DE00A7C9AE /* AddGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupViewController.swift; sourceTree = "<group>"; };
 		E6C02D48231726B700FEBEAB /* groupDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = groupDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,7 +73,7 @@
 				E656F987229A095600800465 /* AddTransViewController.swift */,
 				E656F989229A0B8A00800465 /* GroupsViewController.swift */,
 				E656F98B229A0DA700800465 /* navigationController.swift */,
-				E6A5888A230F39DE00A7C9AE /* addGroupViewController.swift */,
+				E6A5888A230F39DE00A7C9AE /* AddGroupViewController.swift */,
 				E656F9772299E20000800465 /* Main.storyboard */,
 				E656F97A2299E20200800465 /* Assets.xcassets */,
 				E656F97C2299E20200800465 /* LaunchScreen.storyboard */,
@@ -159,7 +159,7 @@
 				E656F9862299F06800800465 /* appBrain.swift in Sources */,
 				E656F988229A095600800465 /* AddTransViewController.swift in Sources */,
 				E656F9742299E20000800465 /* AppDelegate.swift in Sources */,
-				E6A5888B230F39DE00A7C9AE /* addGroupViewController.swift in Sources */,
+				E6A5888B230F39DE00A7C9AE /* AddGroupViewController.swift in Sources */,
 				E656F98A229A0B8A00800465 /* GroupsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

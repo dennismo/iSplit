@@ -616,7 +616,7 @@
         <!--Add Group View Controller-->
         <scene sceneID="szI-4f-kWV">
             <objects>
-                <viewController storyboardIdentifier="addGroupViewController" id="4M0-ME-77B" customClass="addGroupViewController" customModule="iSplit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addGroupViewController" id="4M0-ME-77B" customClass="AddGroupViewController" customModule="iSplit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="anz-oW-6wL">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
