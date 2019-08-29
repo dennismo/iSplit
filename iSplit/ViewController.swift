@@ -68,7 +68,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func groups(_ sender: UIButton) {
-        let GroupsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "groupsViewController") as! groupsViewController
+        let GroupsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "groupsViewController") as! GroupsViewController
         self.navigationController?.pushViewController(GroupsVC, animated: true)
     }
 

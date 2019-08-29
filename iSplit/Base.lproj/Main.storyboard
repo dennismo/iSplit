@@ -430,7 +430,7 @@
         <!--Groups View Controller-->
         <scene sceneID="1Fb-Kp-N0U">
             <objects>
-                <viewController storyboardIdentifier="groupsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kVg-kQ-kdO" customClass="groupsViewController" customModule="iSplit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="groupsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kVg-kQ-kdO" customClass="GroupsViewController" customModule="iSplit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sX3-5f-nHU">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -466,11 +466,11 @@
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="400" id="idM-5A-d61"/>
                                         </constraints>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Groups" id="c8U-YF-SYA" customClass="grouptableCell" customModule="iSplit" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="944" height="59"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Groups" id="c8U-YF-SYA" customClass="GroupTableCell" customModule="iSplit" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="600" height="59"/>
                                                 <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c8U-YF-SYA" id="5Uc-1f-DVj" customClass="grouptableCell" customModule="iSplit" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="944" height="58.5"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c8U-YF-SYA" id="5Uc-1f-DVj" customClass="GroupTableCell" customModule="iSplit" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="58.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jRX-p2-Tj1">
