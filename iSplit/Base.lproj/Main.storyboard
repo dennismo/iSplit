@@ -220,7 +220,7 @@
         <!--Add View Controller-->
         <scene sceneID="qvv-Hz-06a">
             <objects>
-                <viewController id="ldd-F9-taB" customClass="addViewController" customModule="iSplit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ldd-F9-taB" customClass="AddViewController" customModule="iSplit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Xe-uk-8wP">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

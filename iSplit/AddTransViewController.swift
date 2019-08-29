@@ -8,7 +8,7 @@
 
 import UIKit
 
-class addViewController: UIViewController {
+class AddViewController: UIViewController {
     var options: [String] = []
     var trans: Transaction = Transaction()
     @IBAction func addTransactionButton(_ sender: UIButton) {
@@ -65,7 +65,7 @@ class addViewController: UIViewController {
 
 }
 
-extension addViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+extension AddViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }

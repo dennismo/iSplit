@@ -13,7 +13,7 @@
 		E656F97B2299E20200800465 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E656F97A2299E20200800465 /* Assets.xcassets */; };
 		E656F97E2299E20200800465 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E656F97C2299E20200800465 /* LaunchScreen.storyboard */; };
 		E656F9862299F06800800465 /* appBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656F9852299F06800800465 /* appBrain.swift */; };
-		E656F988229A095600800465 /* addTransViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656F987229A095600800465 /* addTransViewController.swift */; };
+		E656F988229A095600800465 /* AddTransViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656F987229A095600800465 /* AddTransViewController.swift */; };
 		E656F98A229A0B8A00800465 /* groupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656F989229A0B8A00800465 /* groupsViewController.swift */; };
 		E656F98C229A0DA700800465 /* navigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656F98B229A0DA700800465 /* navigationController.swift */; };
 		E6A5888B230F39DE00A7C9AE /* addGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A5888A230F39DE00A7C9AE /* addGroupViewController.swift */; };
@@ -29,7 +29,7 @@
 		E656F97D2299E20200800465 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E656F97F2299E20200800465 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E656F9852299F06800800465 /* appBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appBrain.swift; sourceTree = "<group>"; };
-		E656F987229A095600800465 /* addTransViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addTransViewController.swift; sourceTree = "<group>"; };
+		E656F987229A095600800465 /* AddTransViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransViewController.swift; sourceTree = "<group>"; };
 		E656F989229A0B8A00800465 /* groupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = groupsViewController.swift; sourceTree = "<group>"; };
 		E656F98B229A0DA700800465 /* navigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navigationController.swift; sourceTree = "<group>"; };
 		E6A5888A230F39DE00A7C9AE /* addGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addGroupViewController.swift; sourceTree = "<group>"; };
@@ -70,7 +70,7 @@
 				E656F9752299E20000800465 /* ViewController.swift */,
 				E6C02D48231726B700FEBEAB /* groupDetailViewController.swift */,
 				E656F9852299F06800800465 /* appBrain.swift */,
-				E656F987229A095600800465 /* addTransViewController.swift */,
+				E656F987229A095600800465 /* AddTransViewController.swift */,
 				E656F989229A0B8A00800465 /* groupsViewController.swift */,
 				E656F98B229A0DA700800465 /* navigationController.swift */,
 				E6A5888A230F39DE00A7C9AE /* addGroupViewController.swift */,
@@ -157,7 +157,7 @@
 				E6C02D49231726B700FEBEAB /* groupDetailViewController.swift in Sources */,
 				E656F98C229A0DA700800465 /* navigationController.swift in Sources */,
 				E656F9862299F06800800465 /* appBrain.swift in Sources */,
-				E656F988229A095600800465 /* addTransViewController.swift in Sources */,
+				E656F988229A095600800465 /* AddTransViewController.swift in Sources */,
 				E656F9742299E20000800465 /* AppDelegate.swift in Sources */,
 				E6A5888B230F39DE00A7C9AE /* addGroupViewController.swift in Sources */,
 				E656F98A229A0B8A00800465 /* groupsViewController.swift in Sources */,
