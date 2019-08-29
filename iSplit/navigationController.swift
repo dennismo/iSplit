@@ -1,5 +1,5 @@
 //
-//  navigationController.swift
+//  NavigationController.swift
 //  iSplit
 //
 //  Created by Dennis Mo on 5/25/19.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class mainNavigationController: UINavigationController {
+class MainNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.isNavigationBarHidden = true
