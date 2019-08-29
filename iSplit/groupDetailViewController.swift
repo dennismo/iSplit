@@ -8,31 +8,29 @@
 
 import UIKit
 
-class usertableCell :UITableViewCell{
-
+class usertableCell: UITableViewCell {
 
     @IBOutlet weak var memberName: UILabel!
     @IBOutlet weak var balance: UILabel!
-    var user:user?
-    func setuserTable(u: user){
+    var user: user?
+    func setuserTable(u: user) {
         user = u
         memberName.text = u.name
-        if(u.balance >= 0){
+        if(u.balance >= 0) {
             balance.textColor = UIColor.green
-        }else{
+        } else {
             balance.textColor = UIColor.red
         }
         balance.text = "Balance: $" + String(format: "%.2f", u.balance)
     }
-    
+
 }
 
 class groupDetailViewController: UIViewController {
 
-    
     @IBOutlet weak var gName: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    
+
     @IBAction func doneButton(_ sender: UIButton) {
     self.navigationController?.popViewController(animated: true)
     }
@@ -43,30 +41,30 @@ class groupDetailViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated);
+        super.viewDidAppear(animated)
         tableView.reloadData()
     }
     override var shouldAutorotate: Bool {
         return true
     }
-    
+
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Release any cached data, images, etc that aren't in use.
     }
-    
+
     override var prefersStatusBarHidden: Bool {
         return false
     }
-    
+
 }
-extension groupDetailViewController: UITableViewDelegate,UITableViewDataSource{
+extension groupDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return bank.currGroup?.users.count ?? 0
     }

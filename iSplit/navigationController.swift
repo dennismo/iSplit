@@ -1,5 +1,5 @@
 //
-//  addTrans.swift
+//  navigationController.swift
 //  iSplit
 //
 //  Created by Dennis Mo on 5/25/19.
@@ -12,7 +12,5 @@ class mainNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.isNavigationBarHidden = true
-        
     }
-    
 }
