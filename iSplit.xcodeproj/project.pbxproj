@@ -17,6 +17,7 @@
 		E656F98A229A0B8A00800465 /* groupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656F989229A0B8A00800465 /* groupsViewController.swift */; };
 		E656F98C229A0DA700800465 /* navigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656F98B229A0DA700800465 /* navigationController.swift */; };
 		E6A5888B230F39DE00A7C9AE /* addGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A5888A230F39DE00A7C9AE /* addGroupViewController.swift */; };
+		E6C02D49231726B700FEBEAB /* groupDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C02D48231726B700FEBEAB /* groupDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		E656F989229A0B8A00800465 /* groupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = groupsViewController.swift; sourceTree = "<group>"; };
 		E656F98B229A0DA700800465 /* navigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navigationController.swift; sourceTree = "<group>"; };
 		E6A5888A230F39DE00A7C9AE /* addGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addGroupViewController.swift; sourceTree = "<group>"; };
+		E6C02D48231726B700FEBEAB /* groupDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = groupDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				E656F9732299E20000800465 /* AppDelegate.swift */,
 				E656F9752299E20000800465 /* ViewController.swift */,
+				E6C02D48231726B700FEBEAB /* groupDetailViewController.swift */,
 				E656F9852299F06800800465 /* appBrain.swift */,
 				E656F987229A095600800465 /* addTransViewController.swift */,
 				E656F989229A0B8A00800465 /* groupsViewController.swift */,
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E656F9762299E20000800465 /* ViewController.swift in Sources */,
+				E6C02D49231726B700FEBEAB /* groupDetailViewController.swift in Sources */,
 				E656F98C229A0DA700800465 /* navigationController.swift in Sources */,
 				E656F9862299F06800800465 /* appBrain.swift in Sources */,
 				E656F988229A095600800465 /* addTransViewController.swift in Sources */,

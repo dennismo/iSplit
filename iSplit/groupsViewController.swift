@@ -71,7 +71,9 @@ extension groupsViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return bank.groups.count
     }
-    
+//    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+//        indexPath.row
+//    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let g = bank.groups[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "Groups") as! grouptableCell

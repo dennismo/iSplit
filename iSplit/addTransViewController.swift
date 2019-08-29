@@ -12,7 +12,7 @@ class addViewController: UIViewController {
     var options:[String] = []
     var trans:transaction = transaction()
     @IBAction func addTransactionButton(_ sender: UIButton) {
-        bank.currGroup?.tranHistory.append(trans)
+        bank.newTransaction(trans: trans)
         dismiss(animated: true, completion: nil)
     }
     override func viewDidLoad() {

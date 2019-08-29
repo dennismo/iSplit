@@ -34,6 +34,10 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func showBalance(_ sender: UIButton) {
+        let balanceVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "groupDetail") as! groupDetailViewController
+        self.navigationController?.pushViewController(balanceVC, animated: true)
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if (bank.currGroup == nil){
@@ -56,21 +60,16 @@ class ViewController: UIViewController {
         //bank = UserDefaults.standard.object(forKey: "bank") as? centralBank ?? centralBank()
         bank.groups.append(group(name: "Group", members:["Dennis","Bill","Yifei","Timmy"]))
         bank.currGroup = bank.groups[0]
+        var tempTrans = transaction()
+        tempTrans.date = Date.init(timeIntervalSince1970: 500)
+        tempTrans.tranName = "TestTransaction"
+        tempTrans.totalAmount = 30.5
+        tempTrans.payTable = [1,-0.3,-0.2,-0.4]
+        bank.newTransaction(trans: tempTrans)
         tableView.dataSource = self
         tableView.delegate = self
     }
     
-    func createTrans()->[transaction]{
-        var tempTrans = [transaction]()
-        
-//        let t1 = transaction(tranName: "tran1", names: ["Dennis","Stellar","Maxwell"], personPaid: "Dennis", payRatio: [0.333,0.333,0.333], totalAmount: 100, time:Date.init(timeIntervalSinceNow: 0))
-//        let t2 = transaction(tranName: "Food Basics", names: ["Dennis","Stellar","Maxwell"], personPaid: "Stellar", payRatio: [0.2,0.4,0.4], totalAmount: 50, time:Date.init(timeIntervalSinceNow: 100))
-//        let t3 = transaction(tranName: "Lunch", names: ["Dennis","Stellar","Maxwell"], personPaid: "Maxwell", payRatio: [0.1,0.9,0], totalAmount: 25, time: Date.init(timeIntervalSinceNow: 1000))
-//        tempTrans.append(t1)
-//        tempTrans.append(t2)
-//        tempTrans.append(t3)
-        return tempTrans
-    }
     
     @IBAction func groups(_ sender: UIButton) {
         let GroupsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "groupsViewController") as! groupsViewController

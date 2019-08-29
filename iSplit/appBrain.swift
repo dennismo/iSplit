@@ -58,6 +58,9 @@ class centralBank:NSCoding{
     var currGroup:group?
     func newTransaction(trans:transaction){
         currGroup?.tranHistory.insert(trans, at: 0)
+        for i in 0...currGroup!.users.count - 1{
+            currGroup!.users[i].balance += trans.payTable[i]*trans.totalAmount
+        }
     }
     init(){
         groups = []
