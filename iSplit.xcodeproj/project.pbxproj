@@ -17,6 +17,7 @@
 		E656F98A229A0B8A00800465 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656F989229A0B8A00800465 /* GroupsViewController.swift */; };
 		E656F98C229A0DA700800465 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656F98B229A0DA700800465 /* NavigationController.swift */; };
 		E6A5888B230F39DE00A7C9AE /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A5888A230F39DE00A7C9AE /* AddGroupViewController.swift */; };
+		E6C02D49231726B700FEBEAB /* GroupDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C02D48231726B700FEBEAB /* GroupDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		E656F989229A0B8A00800465 /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
 		E656F98B229A0DA700800465 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		E6A5888A230F39DE00A7C9AE /* AddGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupViewController.swift; sourceTree = "<group>"; };
+		E6C02D48231726B700FEBEAB /* GroupDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				E656F9752299E20000800465 /* ViewController.swift */,
+				E6C02D48231726B700FEBEAB /* GroupDetailViewController.swift */,
 				E656F987229A095600800465 /* AddTransViewController.swift */,
 				E656F989229A0B8A00800465 /* GroupsViewController.swift */,
 				E656F98B229A0DA700800465 /* NavigationController.swift */,
@@ -183,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E656F9762299E20000800465 /* ViewController.swift in Sources */,
+				E6C02D49231726B700FEBEAB /* GroupDetailViewController.swift in Sources */,
 				E656F98C229A0DA700800465 /* NavigationController.swift in Sources */,
 				E656F9862299F06800800465 /* AppBrain.swift in Sources */,
 				E656F988229A095600800465 /* AddTransViewController.swift in Sources */,

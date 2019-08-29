@@ -8,7 +8,7 @@
 
 import UIKit
 
-class grouptableCell: UITableViewCell {
+class GroupTableCell: UITableViewCell {
     @IBOutlet weak var memberNames: UILabel!
 
     @IBOutlet weak var groupName: UILabel!
@@ -26,7 +26,7 @@ class grouptableCell: UITableViewCell {
     }
 }
 
-class groupsViewController: UIViewController {
+class GroupsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     public var groups = [Group]()
 
@@ -66,7 +66,7 @@ class groupsViewController: UIViewController {
     }
 
 }
-extension groupsViewController: UITableViewDelegate, UITableViewDataSource {
+extension GroupsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return bank.groups.count
     }
@@ -76,7 +76,7 @@ extension groupsViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let g = bank.groups[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Groups") as! grouptableCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Groups") as! GroupTableCell
         cell.setgroupTable(group: g)
         return cell
     }

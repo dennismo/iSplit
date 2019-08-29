@@ -10,7 +10,7 @@ import UIKit
 
 var bank = CentralBank()
 
-class tableCell: UITableViewCell {
+class TableCell: UITableViewCell {
     @IBOutlet weak var transName: UILabel!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var amount: UILabel!
@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showBalance(_ sender: UIButton) {
-        let balanceVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "groupDetail") as! groupDetailViewController
+        let balanceVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "groupDetail") as! GroupDetailViewController
         self.navigationController?.pushViewController(balanceVC, animated: true)
     }
 
@@ -69,7 +69,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func groups(_ sender: UIButton) {
-        let GroupsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "groupsViewController") as! groupsViewController
+        let GroupsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "groupsViewController") as! GroupsViewController
         self.navigationController?.pushViewController(GroupsVC, animated: true)
     }
 
@@ -100,7 +100,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let t = bank.currGroup?.tranHistory[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "transaction") as! tableCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "transaction") as! TableCell
         if t != nil {
             cell.setTransaction(trans: t!)
         }
