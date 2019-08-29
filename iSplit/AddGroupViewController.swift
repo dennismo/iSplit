@@ -4,13 +4,13 @@ class addGroupViewController: UIViewController {
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
     }
-    
+
     @IBAction func addGroupButton(_ sender: UIButton) {
-    bank.groups.append(group(name: groupName.text ?? "", members: stringToNames(s: memberName.text!)))
-        
+    bank.groups.append(Group(name: groupName.text ?? "", members: stringToNames(s: memberName.text!)))
+
         dismiss(animated: true, completion: nil)
     }
-    func stringToNames(s:String) -> [String]{
+    func stringToNames(s: String) -> [String] {
         return s.components(separatedBy: ",")
     }
     @IBOutlet weak var memberName: UITextField!
@@ -23,11 +23,10 @@ class addGroupViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
     }
     override var prefersStatusBarHidden: Bool {
         return false
     }
-    
-}
 
+}

@@ -12,7 +12,7 @@ class mainNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.isNavigationBarHidden = true
-        
+
     }
-    
+
 }
