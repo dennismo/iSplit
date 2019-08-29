@@ -3,13 +3,21 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "ViewController.tableView(_:cellForRowAt:):ViewController.swift">
-      </ContextState>
-      <ContextState
          contextName = "groupsViewController.addGroup(_:):groupsViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "navigationController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.tableView(_:cellForRowAt:):ViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "centralBank.newTransaction(trans:):appBrain.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "currGroup">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

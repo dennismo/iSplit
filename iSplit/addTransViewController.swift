@@ -15,6 +15,10 @@ class addViewController: UIViewController {
         bank.newTransaction(trans: trans)
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func cancel(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))

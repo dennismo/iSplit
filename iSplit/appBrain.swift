@@ -22,6 +22,11 @@ class group {
     var groupImage:UIImage?
     var users = [user]()
     var tranHistory = [transaction]()
+    init(){
+        groupName = ""
+        users = []
+    }
+    
     init(name:String,members:[String]){
         groupName = name
         for u in members {
