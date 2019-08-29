@@ -8,17 +8,17 @@
 
 import UIKit
 
-class grouptableCell :UITableViewCell{
+class grouptableCell: UITableViewCell {
     @IBOutlet weak var memberNames: UILabel!
-    
+
     @IBOutlet weak var groupName: UILabel!
-    
+
     @IBOutlet weak var groupIcon: UIImageView!
     @IBAction func selectGroup(_ sender: UIButton) {
         bank.currGroup = cellGroup
     }
-    var cellGroup:group?
-    func setgroupTable(group: group){
+    var cellGroup: Group?
+    func setgroupTable(group: Group) {
         cellGroup = group
         groupName.text = group.groupName
         groupIcon.image = group.groupImage
@@ -26,11 +26,10 @@ class grouptableCell :UITableViewCell{
     }
 }
 
-
 class groupsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    public var groups = [group]()
-    
+    public var groups = [Group]()
+
     @IBAction func doneGroup(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -44,36 +43,37 @@ class groupsViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated);
+        super.viewDidAppear(animated)
         tableView.reloadData()
     }
     override var shouldAutorotate: Bool {
         return true
     }
-    
+
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Release any cached data, images, etc that aren't in use.
     }
-    
+
     override var prefersStatusBarHidden: Bool {
         return false
     }
-    
+
 }
-extension groupsViewController: UITableViewDelegate,UITableViewDataSource{
+extension groupsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return bank.groups.count
     }
 //    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
 //        indexPath.row
 //    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let g = bank.groups[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "Groups") as! grouptableCell

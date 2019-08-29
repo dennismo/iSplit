@@ -64,7 +64,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$200.10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQ0-Xn-4pm">
-                                                            <rect key="frame" x="254.5" y="19" width="62.5" height="21"/>
+                                                            <rect key="frame" x="479.5" y="19" width="62.5" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="v4c-jR-4jE"/>
                                                             </constraints>
@@ -220,7 +220,7 @@
         <!--Add View Controller-->
         <scene sceneID="qvv-Hz-06a">
             <objects>
-                <viewController id="ldd-F9-taB" customClass="addViewController" customModule="iSplit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ldd-F9-taB" customClass="AddViewController" customModule="iSplit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Xe-uk-8wP">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -461,7 +461,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jRX-p2-Tj1">
-                                                            <rect key="frame" x="0.0" y="0.0" width="944" height="50"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aKO-n4-MdN">
                                                                     <rect key="frame" x="0.0" y="0.0" width="45" height="50"/>
@@ -480,7 +480,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Member Names" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crD-QQ-I7E">
-                                                                    <rect key="frame" x="215" y="0.0" width="669" height="50"/>
+                                                                    <rect key="frame" x="215" y="0.0" width="325" height="50"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="sfI-QF-Q4i"/>
                                                                     </constraints>
@@ -489,7 +489,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kns-6U-PRT">
-                                                                    <rect key="frame" x="894" y="0.0" width="50" height="50"/>
+                                                                    <rect key="frame" x="550" y="0.0" width="50" height="50"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="50" id="Pye-bG-fFf"/>
                                                                     </constraints>
