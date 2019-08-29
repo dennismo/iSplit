@@ -10,7 +10,7 @@ import UIKit
 
 class addViewController: UIViewController {
     var options: [String] = []
-    var trans: transaction = transaction()
+    var trans: Transaction = Transaction()
     @IBAction func addTransactionButton(_ sender: UIButton) {
         bank.newTransaction(trans: trans)
         dismiss(animated: true, completion: nil)

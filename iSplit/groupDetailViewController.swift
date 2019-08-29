@@ -12,8 +12,8 @@ class usertableCell: UITableViewCell {
 
     @IBOutlet weak var memberName: UILabel!
     @IBOutlet weak var balance: UILabel!
-    var user: user?
-    func setuserTable(u: user) {
+    var user: User?
+    func setuserTable(u: User) {
         user = u
         memberName.text = u.name
         if(u.balance >= 0) {

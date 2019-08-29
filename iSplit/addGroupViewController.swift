@@ -11,7 +11,7 @@ class addGroupViewController: UIViewController {
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
     }
-    var g = group()
+    var g = Group()
     @IBAction func addGroupButton(_ sender: UIButton) {
         bank.groups.append(g)
         dismiss(animated: true, completion: nil)
@@ -32,7 +32,7 @@ class addGroupViewController: UIViewController {
     @IBAction func memberName(_ sender: UITextField) {
         g.users.removeAll()
         for name in stringToNames(s: sender.text!) {
-            g.users.append(user(name: name))
+            g.users.append(User(name: name))
         }
     }
 

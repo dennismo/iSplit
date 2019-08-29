@@ -8,7 +8,7 @@
 
 import UIKit
 
-class user {
+class User {
     var name: String
     var balance: Double
     init(name: String) {
@@ -17,11 +17,11 @@ class user {
     }
 }
 
-class group {
+class Group {
     var groupName: String
     var groupImage: UIImage?
-    var users = [user]()
-    var tranHistory = [transaction]()
+    var users = [User]()
+    var tranHistory = [Transaction]()
     init() {
         groupName = ""
         users = []
@@ -30,7 +30,7 @@ class group {
     init(name: String, members: [String]) {
         groupName = name
         for u in members {
-            users.append(user(name: u))
+            users.append(User(name: u))
         }
     }
     func getMembers() -> String {
@@ -43,7 +43,7 @@ class group {
     }
 
 }
-struct transaction {
+struct Transaction {
     var tranName: String
     var payTable = [Double]()
     var date: Date
@@ -55,11 +55,11 @@ struct transaction {
     }
 }
 
-class centralBank: NSCoding {
+class CentralBank: NSCoding {
 
-    var groups: [group]
-    var currGroup: group?
-    func newTransaction(trans: transaction) {
+    var groups: [Group]
+    var currGroup: Group?
+    func newTransaction(trans: Transaction) {
         currGroup?.tranHistory.insert(trans, at: 0)
         for i in 0...currGroup!.users.count - 1 {
             currGroup!.users[i].balance += trans.payTable[i]*trans.totalAmount

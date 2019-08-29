@@ -16,8 +16,8 @@ class grouptableCell: UITableViewCell {
         bank.currGroup = cellGroup
     }
 
-    var cellGroup: group?
-    func setgroupTable(group: group) {
+    var cellGroup: Group?
+    func setgroupTable(group: Group) {
         cellGroup = group
         groupName.text = group.groupName
         groupIcon.image = group.groupImage
@@ -27,7 +27,7 @@ class grouptableCell: UITableViewCell {
 
 class groupsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    public var groups = [group]()
+    public var groups = [Group]()
 
     @IBAction func doneGroup(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)

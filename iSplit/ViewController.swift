@@ -8,13 +8,13 @@
 
 import UIKit
 
-var bank = centralBank()
+var bank = CentralBank()
 
 class tableCell: UITableViewCell {
     @IBOutlet weak var transName: UILabel!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var amount: UILabel!
-    func setTransaction(trans: transaction) {
+    func setTransaction(trans: Transaction) {
         transName.text = trans.tranName
         date.text = trans.date.description
         amount.text = "$" + trans.totalAmount.description
@@ -55,9 +55,9 @@ class ViewController: UIViewController {
 //            return
 //        }
         //bank = UserDefaults.standard.object(forKey: "bank") as? centralBank ?? centralBank()
-        bank.groups.append(group(name: "Group", members: ["Dennis", "Bill", "Yifei", "Timmy"]))
+        bank.groups.append(Group(name: "Group", members: ["Dennis", "Bill", "Yifei", "Timmy"]))
         bank.currGroup = bank.groups[0]
-        var tempTrans = transaction()
+        var tempTrans = Transaction()
         tempTrans.date = Date.init(timeIntervalSince1970: 500)
         tempTrans.tranName = "TestTransaction"
         tempTrans.totalAmount = 30.5
