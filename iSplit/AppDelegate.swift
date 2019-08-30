@@ -40,7 +40,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-        //UserDefaults.standard.set(bank, forKey: "bank")
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(bank) {
+            let defaults = UserDefaults.standard
+            defaults.set(encoded, forKey: "bank")
+        }
     }
 
 

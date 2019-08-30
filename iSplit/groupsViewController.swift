@@ -21,7 +21,7 @@ class grouptableCell :UITableViewCell{
     func setgroupTable(group: group){
         cellGroup = group
         groupName.text = group.groupName
-        groupIcon.image = group.groupImage
+//        groupIcon.image = group.groupImage
         memberNames.text = group.getMembers()
     }
 }

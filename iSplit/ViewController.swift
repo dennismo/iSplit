@@ -58,14 +58,18 @@ class ViewController: UIViewController {
 //            return
 //        }
         //bank = UserDefaults.standard.object(forKey: "bank") as? centralBank ?? centralBank()
-        bank.groups.append(group(name: "Group", members:["Dennis","Bill","Yifei","Timmy"]))
-        bank.currGroup = bank.groups[0]
-        var tempTrans = transaction()
-        tempTrans.date = Date.init(timeIntervalSince1970: 500)
-        tempTrans.tranName = "TestTransaction"
-        tempTrans.totalAmount = 30.5
-        tempTrans.payTable = [1,-0.3,-0.2,-0.4]
-        bank.newTransaction(trans: tempTrans)
+        if let savedBank = UserDefaults.standard.object(forKey: "bank") as? Data {
+            let decoder = JSONDecoder()
+            bank = try! decoder.decode(centralBank.self, from: savedBank) 
+        }
+//        bank.groups.append(group(name: "Group", members:["Dennis","Bill","Yifei","Timmy"]))
+//        bank.currGroup = bank.groups[0]
+//        var tempTrans = transaction()
+//        tempTrans.date = Date.init(timeIntervalSince1970: 500)
+//        tempTrans.tranName = "TestTransaction"
+//        tempTrans.totalAmount = 30.5
+//        tempTrans.payTable = [1,-0.3,-0.2,-0.4]
+//        bank.newTransaction(trans: tempTrans)
         tableView.dataSource = self
         tableView.delegate = self
     }

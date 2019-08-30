@@ -8,7 +8,18 @@
 
 import UIKit
 
-class user {
+class user :Codable{
+//    func encode(with aCoder: NSCoder) {
+//        aCoder.encode(name,forKey: "name")
+//        aCoder.encode(balance,forKey:"balance")
+//    }
+//    
+//    required convenience init?(coder aDecoder: NSCoder) {
+//        self.init(name: "")
+//        self.name = aDecoder.decodeObject(forKey: "name") as! String
+//        self.balance = aDecoder.decodeDouble(forKey: "balance")
+//    }
+    
     var name:String
     var balance:Double
     init(name:String){
@@ -17,9 +28,22 @@ class user {
     }
 }
 
-class group {
+class group:Codable{
+//    func encode(with aCoder: NSCoder) {
+//        aCoder.encode(groupName,forKey: "groupName")
+//        aCoder.encode(users,forKey: "users")
+//        aCoder.encode(tranHistory,forKey: "transHistory")
+//    }
+//
+//    required convenience init?(coder aDecoder: NSCoder) {
+//        self.init()
+//        groupName = aDecoder.decodeObject(forKey: "groupName") as! String
+//        users = aDecoder.decodeObject(forKey: "users") as! [user]
+//        tranHistory = aDecoder.decodeObject(forKey: "tranHistory") as! [transaction]
+//    }
+    
     var groupName:String
-    var groupImage:UIImage?
+    //var groupImage:UIImage?
     var users = [user]()
     var tranHistory = [transaction]()
     init(){
@@ -43,7 +67,7 @@ class group {
     }
     
 }
-struct transaction{
+struct transaction:Codable{
     var tranName:String
     var payTable = [Double]()
     var date:Date
@@ -55,7 +79,7 @@ struct transaction{
     }
 }
 
-class centralBank:NSCoding{
+class centralBank:Codable{
     
 
     
@@ -70,12 +94,15 @@ class centralBank:NSCoding{
     init(){
         groups = []
     }
-    func encode(with aCoder: NSCoder) {
-        
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        groups = []
-    }
+//    func encode(with aCoder: NSCoder) {
+//        aCoder.encode(groups,forKey: "groups")
+//        aCoder.encode(currGroup,forKey: "currGroup")
+//    }
+//
+//    required convenience init(coder aDecoder: NSCoder) {
+//        self.init()
+//        self.groups = aDecoder.decodeObject(forKey: "groups") as! [group]? ?? []
+//        self.currGroup = aDecoder.decodeObject(forKey: "currGroup") as! group? ?? group()
+//    }
 }
 
