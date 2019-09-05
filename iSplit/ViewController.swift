@@ -30,9 +30,25 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var currentGroup: UILabel!
+    
     @IBAction func addItem(_ sender: UIButton) {
-        
+        if(bank.currGroup == nil){
+            let alert = UIAlertController(title: "No Group Selected", message: "", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Select", style: .default, handler: { (alert) -> Void in
+                self.presentGroup()
+            }))
+            alert.addAction(UIAlertAction(title: "FINE", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true)
+        }
+        else{
+            let addVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "addTrans") as! addViewController
+            self.navigationController?.pushViewController(addVC, animated: true)
+        }
     }
+    
+    
     
     @IBAction func showBalance(_ sender: UIButton) {
         let balanceVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "groupDetail") as! groupDetailViewController
@@ -76,6 +92,9 @@ class ViewController: UIViewController {
     
     
     @IBAction func groups(_ sender: UIButton) {
+        presentGroup()
+    }
+    func presentGroup(){
         let GroupsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "groupsViewController") as! groupsViewController
         self.navigationController?.pushViewController(GroupsVC, animated: true)
     }

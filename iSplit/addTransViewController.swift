@@ -78,9 +78,7 @@ extension addViewController:UIPickerViewDelegate, UIPickerViewDataSource{
             if(i == row){
                 trans.payTable.append(1.0)
             }
-            else{
-                trans.payTable.append(-1.0 / Double((bank.currGroup!.users.count - 1)))
-            }
+            trans.payTable.append(-1.0 / Double((bank.currGroup!.users.count)))
         }
     }
     
