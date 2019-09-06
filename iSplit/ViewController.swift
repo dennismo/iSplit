@@ -44,7 +44,7 @@ class ViewController: UIViewController {
         }
         else{
             let addVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "addTrans") as! addViewController
-            self.navigationController?.pushViewController(addVC, animated: true)
+            present(addVC, animated: true, completion: nil)
         }
     }
     

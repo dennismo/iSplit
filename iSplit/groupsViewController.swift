@@ -16,9 +16,12 @@ class grouptableCell :UITableViewCell{
     @IBOutlet weak var groupIcon: UIImageView!
     @IBAction func selectGroup(_ sender: UIButton) {
         bank.currGroup = cellGroup
+        parentVC?.Exit()
     }
+    var parentVC:groupsViewController?
     var cellGroup:group?
-    func setgroupTable(group: group){
+    func setgroupTable(group: group,vc :groupsViewController){
+        parentVC = vc
         cellGroup = group
         groupName.text = group.groupName
 //        groupIcon.image = group.groupImage
@@ -30,9 +33,11 @@ class grouptableCell :UITableViewCell{
 class groupsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     public var groups = [group]()
-    
-    @IBAction func doneGroup(_ sender: UIButton) {
+    public func Exit(){
         self.navigationController?.popViewController(animated: true)
+    }
+    @IBAction func doneGroup(_ sender: UIButton) {
+        self.Exit()
     }
     @IBAction func addGroup(_ sender: UIButton) {
         let addGroupVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "addGroupViewController") as! addGroupViewController
@@ -77,7 +82,7 @@ extension groupsViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let g = bank.groups[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "Groups") as! grouptableCell
-        cell.setgroupTable(group: g)
+        cell.setgroupTable(group: g,vc: self)
         return cell
     }
 }

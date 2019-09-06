@@ -12,8 +12,15 @@ class addViewController: UIViewController {
     var options:[String] = []
     var trans:transaction = transaction()
     @IBAction func addTransactionButton(_ sender: UIButton) {
-        bank.newTransaction(trans: trans)
-        dismiss(animated: true, completion: nil)
+        if trans.tranName == "" || trans.totalAmount == 0 {
+            let alert = UIAlertController(title: "Incomplete Transaction", message: "Please input all required values", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "I KNOW", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
+        }
+        else{
+            bank.newTransaction(trans: trans)
+            dismiss(animated: true, completion: nil)
+        }
     }
     
     @IBAction func cancel(_ sender: UIButton) {
