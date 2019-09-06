@@ -22,9 +22,11 @@ class user :Codable{
     
     var name:String
     var balance:Double
-    init(name:String){
+    var id:Int
+    init(name:String,id:Int){
         self.name = name
-        self.balance = 0;
+        self.balance = 0.0
+        self.id = id
     }
 }
 
@@ -53,8 +55,8 @@ class group:Codable{
     
     init(name:String,members:[String]){
         groupName = name
-        for u in members {
-            users.append(user(name: u))
+        for i in 0...members.count - 1 {
+            users.append(user(name: members[i],id: i))
         }
     }
     func getMembers()->String{
@@ -91,6 +93,7 @@ class centralBank:Codable{
             currGroup!.users[i].balance += trans.payTable[i]*trans.totalAmount
         }
     }
+    var pendingPayTable:[Double]?
     init(){
         groups = []
     }

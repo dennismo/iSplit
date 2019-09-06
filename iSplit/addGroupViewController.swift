@@ -23,8 +23,9 @@ class addGroupViewController: UIViewController {
     
     @IBAction func memberName(_ sender: UITextField) {
         g.users.removeAll()
-        for name in stringToNames(s: sender.text!) {
-            g.users.append(user(name: name))
+        var ns = stringToNames(s: sender.text!)
+        for i in 0...ns.count - 1 {
+            g.users.append(user(name: ns[i],id:i))
         }
     }
     @IBAction func addGroup(_ sender: UIButton) {

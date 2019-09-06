@@ -107,7 +107,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Group: ICON" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPf-mw-hBM">
                                                 <rect key="frame" x="47.5" y="10" width="180" height="20"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="180" id="OnL-q7-chm"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="OnL-q7-chm"/>
                                                     <constraint firstAttribute="height" constant="20" id="kBK-7z-vpo"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -262,7 +262,7 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZXg-CC-1av">
-                                        <rect key="frame" x="20" y="72" width="984" height="611"/>
+                                        <rect key="frame" x="20" y="72" width="984" height="622"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7rx-nW-9bO">
                                                 <rect key="frame" x="0.0" y="0.0" width="984" height="40"/>
@@ -276,6 +276,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wcQ-FO-fvO">
                                                         <rect key="frame" x="166.5" y="0.0" width="817.5" height="40"/>
                                                         <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                         <connections>
                                                             <action selector="transactionName:" destination="ldd-F9-taB" eventType="editingDidEnd" id="0N4-LD-kGm"/>
@@ -320,7 +321,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <datePicker contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="cB5-Vr-5XO">
-                                                <rect key="frame" x="0.0" y="178" width="984" height="167"/>
+                                                <rect key="frame" x="0.0" y="178" width="984" height="132"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="130" id="hOG-Bs-GGN"/>
                                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="300" id="nac-al-noL"/>
@@ -333,7 +334,7 @@
                                                 </connections>
                                             </datePicker>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Splitting Options" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1v-y1-lf2">
-                                                <rect key="frame" x="0.0" y="355" width="984" height="30"/>
+                                                <rect key="frame" x="0.0" y="320" width="984" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="6pj-lh-am8"/>
                                                 </constraints>
@@ -342,12 +343,20 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NYI-HI-22k">
-                                                <rect key="frame" x="0.0" y="395" width="984" height="216"/>
+                                                <rect key="frame" x="0.0" y="360" width="984" height="216"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="cTS-kx-gq5"/>
                                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="300" id="iQs-3z-B1q"/>
                                                 </constraints>
                                             </pickerView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXk-2l-YR8">
+                                                <rect key="frame" x="0.0" y="586" width="984" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="Advanced Spliting Options"/>
+                                                <connections>
+                                                    <action selector="splitOptionButton:" destination="ldd-F9-taB" eventType="touchUpInside" id="THo-w6-VS1"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="W1v-y1-lf2" firstAttribute="centerX" secondItem="ZXg-CC-1av" secondAttribute="centerX" id="N8i-Qf-WCM"/>
@@ -361,8 +370,8 @@
                                         <rect key="frame" x="25" y="708" width="974" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeB-jc-uSk">
-                                                <rect key="frame" x="462" y="7" width="50" height="46"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                <rect key="frame" x="460.5" y="0.0" width="53" height="48"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="Add"/>
                                                 <connections>
                                                     <action selector="addTransactionButton:" destination="ldd-F9-taB" eventType="touchUpInside" id="TAz-uu-cQ9"/>
@@ -371,8 +380,8 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="oeB-jc-uSk" firstAttribute="centerY" secondItem="Rti-m1-tmR" secondAttribute="centerY" id="8m8-hW-xLD"/>
                                             <constraint firstItem="oeB-jc-uSk" firstAttribute="centerX" secondItem="Rti-m1-tmR" secondAttribute="centerX" id="9k3-zN-cUR"/>
+                                            <constraint firstItem="oeB-jc-uSk" firstAttribute="top" secondItem="Rti-m1-tmR" secondAttribute="top" id="fF5-uV-3JC"/>
                                             <constraint firstAttribute="height" constant="60" id="ubJ-lA-Mrt"/>
                                         </constraints>
                                     </view>
@@ -428,7 +437,7 @@
         <!--Split Option View Controller-->
         <scene sceneID="IpY-Qq-5AF">
             <objects>
-                <viewController id="gjh-AR-Ilz" customClass="SplitOptionViewController" customModule="iSplit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="splitOption" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gjh-AR-Ilz" customClass="SplitOptionViewController" customModule="iSplit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vbI-iR-rOz">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -461,7 +470,7 @@
                                         <rect key="frame" x="50" y="66" width="924" height="602"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="55" id="OK8-bk-6PN">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="splitOption" rowHeight="55" id="OK8-bk-6PN" customClass="SplitOptionCell" customModule="iSplit" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="924" height="55"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OK8-bk-6PN" id="ZKQ-9r-97A">
@@ -488,6 +497,7 @@
                                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                     <connections>
                                                                         <action selector="setPayRatio:" destination="Aek-bg-vHv" eventType="editingDidEnd" id="Nzj-b8-DuT"/>
+                                                                        <action selector="splitRatio:" destination="OK8-bk-6PN" eventType="editingDidEnd" id="Wkh-9I-hXz"/>
                                                                     </connections>
                                                                 </textField>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdI-U2-Mj1">
@@ -517,6 +527,9 @@
                                                         <constraint firstAttribute="bottom" secondItem="O80-5N-9Ye" secondAttribute="bottom" constant="-0.5" id="lkk-4u-g5g"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="memberName" destination="0hH-WB-yyz" id="kni-Ob-LN8"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>

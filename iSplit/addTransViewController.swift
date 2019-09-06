@@ -35,6 +35,7 @@ class addViewController: UIViewController {
         for u in (bank.currGroup?.users)!  {
             options.append(u.name + " paid and split equally")
         }
+        options.append("Advanced Spliting Option")
         splitPicker.delegate = self
     }
     @IBAction func transactionName(_ sender: UITextField) {
@@ -48,7 +49,16 @@ class addViewController: UIViewController {
     }
     @IBOutlet weak var splitPicker: UIPickerView!
     
-
+    @IBAction func splitOptionButton(_ sender: UIButton) {
+        bank.pendingPayTable?.removeAll()
+        bank.pendingPayTable?.reserveCapacity(bank.currGroup?.users.count ?? 0)
+        let splitVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "splitOption") as! SplitOptionViewController
+        present(splitVC, animated: true, completion: nil)
+        if(bank.pendingPayTable != nil){
+            trans.payTable = bank.pendingPayTable!
+        }
+    }
+    
     override var shouldAutorotate: Bool {
         return true
     }
@@ -80,13 +90,14 @@ extension addViewController:UIPickerViewDelegate, UIPickerViewDataSource{
         return options[row]
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        trans.payTable.removeAll()
-        for i in 0...bank.currGroup!.users.count - 1 {
-            if(i == row){
-                trans.payTable.append(1.0)
+        if (row != options.count - 1){
+            trans.payTable.removeAll()
+            for i in 0...bank.currGroup!.users.count - 1 {
+                if(i == row){
+                    trans.payTable.append(1.0)
+                }
+                trans.payTable.append(-1.0 / Double((bank.currGroup!.users.count)))
             }
-            trans.payTable.append(-1.0 / Double((bank.currGroup!.users.count)))
         }
     }
-    
 }
