@@ -45,6 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let defaults = UserDefaults.standard
             defaults.set(encoded, forKey: "bank")
         }
+        
     }
 
 

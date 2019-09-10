@@ -8,17 +8,31 @@
 
 import UIKit
 
-class SplitOptionCell:UITableViewCell{
+class SplitOptionCell: UITableViewCell {
 
     @IBOutlet weak var memberName: UILabel!
+    @IBOutlet weak var percentSign: UILabel!
     
     @IBAction func splitRatio(_ sender: UITextField) {
         if user != nil {
-            bank.pendingPayTable?[user!.id] = Double(sender.text!)! / 100.0
+            if bank.pendingTransaction.percent {
+                bank.pendingTransaction.payTable[user!.id] = (Double(sender.text!) ?? 0.0) / 100.0
+            }
+            else{
+                bank.pendingTransaction.payTable[user!.id] = (Double(sender.text!) ?? 0.0) / bank.pendingTransaction.totalAmount
+            }
         }
-        
     }
-    
+//    public var bank.pendingTransaction.percent:Bool?{
+//        didSet{
+//            if bank.pendingTransaction.percent == true {
+//                percentSign.text! = "%"
+//            }
+//            else{
+//                percentSign.text! = ""
+//            }
+//        }
+//    }
     var user:user?
     func setUser(u: user){
         user = u;
@@ -26,17 +40,33 @@ class SplitOptionCell:UITableViewCell{
     }
 }
 
-class SplitOptionViewController: UIViewController{
-    @IBOutlet weak var tableView: UITableView!
+class SplitOptionViewController: UIViewController {
+    var observation: NSKeyValueObservation?
     
+    @IBOutlet weak var tableView: UITableView!
     @IBAction func doneButton(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
+    }
+    @IBOutlet weak var totalAmount: UILabel!
+    
+    @IBAction func cancelButton(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func splitOptionSwitch(_ sender: UISegmentedControl) {
+        if(sender.selectedSegmentIndex == 0){
+            bank.pendingTransaction.percent = true
+        }
+        else{
+            bank.pendingTransaction.percent = false
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        totalAmount.text! = "Total Amount: $" + String(bank.pendingTransaction.totalAmount)
     }
     override var shouldAutorotate: Bool {
         return true

@@ -10,15 +10,14 @@ import UIKit
 
 class addViewController: UIViewController {
     var options:[String] = []
-    var trans:transaction = transaction()
     @IBAction func addTransactionButton(_ sender: UIButton) {
-        if trans.tranName == "" || trans.totalAmount == 0 {
+        if bank.pendingTransaction.tranName == "" || bank.pendingTransaction.totalAmount == 0 {
             let alert = UIAlertController(title: "Incomplete Transaction", message: "Please input all required values", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "I KNOW", style: .cancel, handler: nil))
             self.present(alert, animated: true)
         }
         else{
-            bank.newTransaction(trans: trans)
+            bank.newTransaction(trans: bank.pendingTransaction)
             dismiss(animated: true, completion: nil)
         }
     }
@@ -39,25 +38,35 @@ class addViewController: UIViewController {
         splitPicker.delegate = self
     }
     @IBAction func transactionName(_ sender: UITextField) {
-        trans.tranName = sender.text ?? ""
+        bank.pendingTransaction.tranName = sender.text ?? ""
     }
     @IBAction func amountSpent(_ sender: UITextField) {
-        trans.totalAmount = Double(sender.text!)!
+        if sender.text != nil { bank.pendingTransaction.totalAmount = Double(sender.text!)!
+        }
     }
     @IBAction func dateofPurchase(_ sender: UIDatePicker) {
-        trans.date = sender.date
+        bank.pendingTransaction.date = sender.date
     }
     @IBOutlet weak var splitPicker: UIPickerView!
     
     @IBAction func splitOptionButton(_ sender: UIButton) {
-        bank.pendingPayTable?.removeAll()
-        bank.pendingPayTable?.reserveCapacity(bank.currGroup?.users.count ?? 0)
-        let splitVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "splitOption") as! SplitOptionViewController
-        present(splitVC, animated: true, completion: nil)
-        if(bank.pendingPayTable != nil){
-            trans.payTable = bank.pendingPayTable!
+        if bank.pendingTransaction.totalAmount != 0 {
+            bank.pendingTransaction.payTable = []
+            for i in 0...(bank.currGroup?.users.count)! - 1 {
+                bank.pendingTransaction.payTable.append(0.0)
+            }
+            let splitVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "splitOption") as! SplitOptionViewController
+            present(splitVC, animated: true, completion: nil)
         }
     }
+    @IBAction func settleUpButton(_ sender: UIButton) {
+        for u in bank.currGroup!.users {
+            u.balance = 0
+        }
+        bank.currGroup?.tranHistory.insert(transaction(tranName:"Settle Up" , date: bank.pendingTransaction.date), at: 0)
+        dismiss(animated: true, completion: nil)
+    }
+    
     
     override var shouldAutorotate: Bool {
         return true
@@ -91,12 +100,14 @@ extension addViewController:UIPickerViewDelegate, UIPickerViewDataSource{
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if (row != options.count - 1){
-            trans.payTable.removeAll()
+            bank.pendingTransaction.payTable.removeAll()
             for i in 0...bank.currGroup!.users.count - 1 {
                 if(i == row){
-                    trans.payTable.append(1.0)
+                    bank.pendingTransaction.payTable.append(1.0 - 1.0 / Double((bank.currGroup!.users.count)))
                 }
-                trans.payTable.append(-1.0 / Double((bank.currGroup!.users.count)))
+                else{
+                    bank.pendingTransaction.payTable.append(-1.0 / Double((bank.currGroup!.users.count)))
+                }
             }
         }
     }

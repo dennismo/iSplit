@@ -60,7 +60,7 @@ class group:Codable{
         }
     }
     func getMembers()->String{
-        var temp:String = ""
+        var temp: String = ""
         for u in users {
             temp.append(u.name)
             temp.append(" ")
@@ -70,20 +70,27 @@ class group:Codable{
     
 }
 struct transaction:Codable{
-    var tranName:String
+    var tranName: String
     var payTable = [Double]()
-    var date:Date
-    var totalAmount:Double
+    var date: Date
+    var percent: Bool
+    var totalAmount: Double
     init(){
         tranName = ""
         date = Date()
         totalAmount = 0
+        percent = true
+    }
+    init(tranName:String,date: Date){
+        self.tranName = tranName
+        self.date = date
+        self.totalAmount = 0.0
+        self.percent = true
+        self.payTable = []
     }
 }
 
 class centralBank:Codable{
-    
-
     
     var groups:[group]
     var currGroup:group?
@@ -93,7 +100,7 @@ class centralBank:Codable{
             currGroup!.users[i].balance += trans.payTable[i]*trans.totalAmount
         }
     }
-    var pendingPayTable:[Double]?
+    var pendingTransaction:transaction = transaction()
     init(){
         groups = []
     }
