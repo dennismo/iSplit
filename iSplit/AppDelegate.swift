@@ -40,21 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-        let encoder = JSONEncoder()
-        if let encoded = try? encoder.encode(bank) {
-            let defaults = UserDefaults.standard
-            defaults.set(encoded, forKey: "bank")
-//            let filename =
-//                getDocumentsDirectory().appendingPathComponent("output.txt")
-//            
-//            do {
-//                try encoded.write(to: filename, atomically: true, encoding: String.Encoding.utf8)
-//            } catch {
-//                // failed to write file – bad permissions, bad filename, missing permissions, or more likely it can't be converted to the encoding
-//            }
-        }
-        
-        
+        saveData()
     }
 
 

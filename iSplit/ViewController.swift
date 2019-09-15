@@ -50,7 +50,13 @@ class ViewController: UIViewController {
         }
     }
     
-    
+    func saveData() {
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(bank) {
+            let defaults = UserDefaults.standard
+            defaults.set(encoded, forKey: "bank")
+        }
+    }
     
     @IBAction func showBalance(_ sender: UIButton) {
         let balanceVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "groupDetail") as! groupDetailViewController
