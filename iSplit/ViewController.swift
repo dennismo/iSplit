@@ -50,11 +50,18 @@ class ViewController: UIViewController {
         }
     }
     
-    func saveData() {
+    func saveBankData() {
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(bank) {
             let defaults = UserDefaults.standard
             defaults.set(encoded, forKey: "bank")
+        }
+    }
+
+    func loadBankData() {
+        if let savedBank = UserDefaults.standard.object(forKey: "bank") as? Data {
+            let decoder = JSONDecoder()
+            bank = try! decoder.decode(centralBank.self, from: savedBank)
         }
     }
     
@@ -82,10 +89,7 @@ class ViewController: UIViewController {
 //            return
 //        }
         //bank = UserDefaults.standard.object(forKey: "bank") as? centralBank ?? centralBank()
-        if let savedBank = UserDefaults.standard.object(forKey: "bank") as? Data {
-            let decoder = JSONDecoder()
-            bank = try! decoder.decode(centralBank.self, from: savedBank) 
-        }
+        loadBankData()
 //        bank.groups.append(group(name: "Group", members:["Dennis","Bill","Yifei","Timmy"]))
 //        bank.currGroup = bank.groups[0]
 //        var tempTrans = transaction()
