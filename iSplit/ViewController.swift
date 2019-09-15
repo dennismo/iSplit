@@ -137,6 +137,9 @@ class ViewController: UIViewController {
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
             saveBankData()
+            let alert = UIAlertController(title: "Good News", message: "Data has been saved.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Got it!", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
     }
 }
