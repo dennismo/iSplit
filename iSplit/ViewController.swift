@@ -50,7 +50,20 @@ class ViewController: UIViewController {
         }
     }
     
-    
+    func saveBankData() {
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(bank) {
+            let defaults = UserDefaults.standard
+            defaults.set(encoded, forKey: "bank")
+        }
+    }
+
+    func loadBankData() {
+        if let savedBank = UserDefaults.standard.object(forKey: "bank") as? Data {
+            let decoder = JSONDecoder()
+            bank = try! decoder.decode(centralBank.self, from: savedBank)
+        }
+    }
     
     @IBAction func showBalance(_ sender: UIButton) {
         let balanceVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "groupDetail") as! groupDetailViewController
@@ -76,10 +89,7 @@ class ViewController: UIViewController {
 //            return
 //        }
         //bank = UserDefaults.standard.object(forKey: "bank") as? centralBank ?? centralBank()
-        if let savedBank = UserDefaults.standard.object(forKey: "bank") as? Data {
-            let decoder = JSONDecoder()
-            bank = try! decoder.decode(centralBank.self, from: savedBank) 
-        }
+        loadBankData()
 //        bank.groups.append(group(name: "Group", members:["Dennis","Bill","Yifei","Timmy"]))
 //        bank.currGroup = bank.groups[0]
 //        var tempTrans = transaction()
@@ -118,6 +128,19 @@ class ViewController: UIViewController {
     
     override var prefersStatusBarHidden: Bool {
         return false
+    }
+
+    override func becomeFirstResponder() -> Bool {
+        return true
+    }
+
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            saveBankData()
+            let alert = UIAlertController(title: "Good News", message: "Data has been saved.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Got it!", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 }
 
