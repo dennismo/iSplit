@@ -60,11 +60,16 @@ class addViewController: UIViewController {
         }
     }
     @IBAction func settleUpButton(_ sender: UIButton) {
-        for u in bank.currGroup!.users {
-            u.balance = 0
-        }
-        bank.currGroup?.tranHistory.insert(transaction(tranName:"Settle Up" , date: bank.pendingTransaction.date), at: 0)
-        dismiss(animated: true, completion: nil)
+        let alert = UIAlertController(title: "Do you want to Settle Up?", message: "All user balance will be set the zero.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (alert) -> Void in
+            for u in bank.currGroup!.users {
+                u.balance = 0
+            }
+            bank.currGroup?.tranHistory.insert(transaction(tranName:"Settle Up" , date: bank.pendingTransaction.date), at: 0)
+            self.dismiss(animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "OOPS,NVM", style: .cancel, handler: nil))
+        self.present(alert, animated: true)
     }
     
     
