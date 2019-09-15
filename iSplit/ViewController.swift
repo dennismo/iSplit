@@ -129,6 +129,16 @@ class ViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return false
     }
+
+    override func becomeFirstResponder() -> Bool {
+        return true
+    }
+
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            saveBankData()
+        }
+    }
 }
 
 extension ViewController: UITableViewDelegate,UITableViewDataSource{
