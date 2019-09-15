@@ -13,7 +13,6 @@ class grouptableCell :UITableViewCell{
     
     @IBOutlet weak var groupName: UILabel!
     
-    @IBOutlet weak var groupIcon: UIImageView!
     @IBAction func selectGroup(_ sender: UIButton) {
         bank.currGroup = cellGroup
         parentVC?.Exit()

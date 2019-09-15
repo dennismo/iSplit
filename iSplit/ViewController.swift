@@ -19,6 +19,8 @@ class tableCell :UITableViewCell{
         date.text = trans.date.description
         amount.text = "$" + trans.totalAmount.description
     }
+    
+    
 }
 
 
