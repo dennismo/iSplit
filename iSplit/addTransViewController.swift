@@ -41,7 +41,7 @@ class addViewController: UIViewController {
         bank.pendingTransaction.tranName = sender.text ?? ""
     }
     @IBAction func amountSpent(_ sender: UITextField) {
-        if sender.text != nil { bank.pendingTransaction.totalAmount = Double(sender.text!)!
+        if sender.text != nil { bank.pendingTransaction.totalAmount = Double(sender.text!) ?? 0.0
         }
     }
     @IBAction func dateofPurchase(_ sender: UIDatePicker) {
@@ -71,25 +71,19 @@ class addViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OOPS,NVM", style: .cancel, handler: nil))
         self.present(alert, animated: true)
     }
-    
-    
     override var shouldAutorotate: Bool {
         return true
     }
-    
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
     }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Release any cached data, images, etc that aren't in use.
     }
-    
     override var prefersStatusBarHidden: Bool {
         return false
     }
-
 }
 
 extension addViewController:UIPickerViewDelegate, UIPickerViewDataSource{

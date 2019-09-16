@@ -14,13 +14,22 @@ class tableCell :UITableViewCell{
     @IBOutlet weak var transName: UILabel!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var amount: UILabel!
-    func setTransaction(trans:transaction){
+    @IBAction func transInfo(_ sender: UIButton) {
+        let transVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "detailTrans") as! DetailTransactionViewController
+        transVC.trans = self.trans
+        if parent != nil {
+            parent!.present(transVC, animated: true, completion: nil)
+        }
+    }
+    var parent:UIViewController?
+    var trans = transaction()
+    func setTransaction(trans:transaction,parentVC:UIViewController){
+        self.parent = parentVC
+        self.trans = trans
         transName.text = trans.tranName
         date.text = trans.date.description
         amount.text = "$" + trans.totalAmount.description
     }
-    
-    
 }
 
 
@@ -78,11 +87,11 @@ class ViewController: UIViewController {
             currentGroup.text = "Current Group: " + bank.currGroup!.groupName
         }
         tableView.reloadData()
-            
-        
+
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
         
 //        let addStoryBoard = UIStoryboard(name:"Add View Controller", bundle: Bundle.main)
 //        guard addStoryBoard.instantiateViewController(withIdentifier:  "addViewController") is addViewController else {
@@ -153,13 +162,13 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
         let t = bank.currGroup?.tranHistory[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "transaction") as! tableCell
         if ((t) != nil){
-            cell.setTransaction(trans: t!)
+            cell.setTransaction(trans: t!,parentVC:self)
         }
         return cell
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            bank.currGroup?.tranHistory.remove(at: indexPath.row)
+            bank.removeTransaction(index: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.

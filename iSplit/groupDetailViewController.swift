@@ -48,13 +48,7 @@ class groupDetailViewController: UIViewController {
         super.viewDidAppear(animated);
         tableView.reloadData()
     }
-    override var shouldAutorotate: Bool {
-        return true
-    }
     
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .portrait
-    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
