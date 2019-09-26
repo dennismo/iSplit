@@ -8,7 +8,7 @@
 
 import UIKit
 
-class addViewController: UIViewController {
+class AddViewController: UIViewController {
     var options:[String] = []
     @IBAction func addTransactionButton(_ sender: UIButton) {
         if bank.pendingTransaction.tranName == "" || bank.pendingTransaction.totalAmount == 0 {
@@ -17,13 +17,15 @@ class addViewController: UIViewController {
             self.present(alert, animated: true)
         }
         else{
+            bank.pendingTransaction.comments = comments.text!
             bank.newTransaction(trans: bank.pendingTransaction)
-            dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
         }
     }
+    @IBOutlet weak var comments: UITextView!
     
     @IBAction func cancel(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +67,7 @@ class addViewController: UIViewController {
             for u in bank.currGroup!.users {
                 u.balance = 0
             }
-            bank.currGroup?.tranHistory.insert(transaction(tranName:"Settle Up" , date: bank.pendingTransaction.date), at: 0)
+            bank.currGroup?.tranHistory.insert(Transaction(tranName:"Settle Up" , date: bank.pendingTransaction.date), at: 0)
             self.dismiss(animated: true, completion: nil)
         }))
         alert.addAction(UIAlertAction(title: "OOPS,NVM", style: .cancel, handler: nil))
@@ -86,7 +88,7 @@ class addViewController: UIViewController {
     }
 }
 
-extension addViewController:UIPickerViewDelegate, UIPickerViewDataSource{
+extension AddViewController: UIPickerViewDelegate, UIPickerViewDataSource{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }

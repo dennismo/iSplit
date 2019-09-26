@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  iSplit
 //
 //  Created by Dennis Mo on 5/25/19.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-var bank = centralBank()
+var bank = CentralBank()
 
-class tableCell :UITableViewCell{
+class tableCell: UITableViewCell{
     @IBOutlet weak var transName: UILabel!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var amount: UILabel!
@@ -21,9 +21,9 @@ class tableCell :UITableViewCell{
             parent!.present(transVC, animated: true, completion: nil)
         }
     }
-    var parent:UIViewController?
-    var trans = transaction()
-    func setTransaction(trans:transaction,parentVC:UIViewController){
+    var parent: UIViewController?
+    var trans = Transaction()
+    func setTransaction(trans: Transaction,parentVC: UIViewController){
         self.parent = parentVC
         self.trans = trans
         transName.text = trans.tranName
@@ -33,10 +33,10 @@ class tableCell :UITableViewCell{
 }
 
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
     
 //    lazy var scene = StartScene(size: view.bounds.size)
-//    var groups = [group]()
+//    var groups = [Group]()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -54,28 +54,14 @@ class ViewController: UIViewController {
             self.present(alert, animated: true)
         }
         else{
-            let addVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "addTrans") as! addViewController
-            present(addVC, animated: true, completion: nil)
+            let addVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "addTrans") as! AddViewController
+            self.navigationController?.pushViewController(addVC, animated: true)
         }
     }
     
-    func saveBankData() {
-        let encoder = JSONEncoder()
-        if let encoded = try? encoder.encode(bank) {
-            let defaults = UserDefaults.standard
-            defaults.set(encoded, forKey: "bank")
-        }
-    }
-
-    func loadBankData() {
-        if let savedBank = UserDefaults.standard.object(forKey: "bank") as? Data {
-            let decoder = JSONDecoder()
-            bank = try! decoder.decode(centralBank.self, from: savedBank)
-        }
-    }
     
     @IBAction func showBalance(_ sender: UIButton) {
-        let balanceVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "groupDetail") as! groupDetailViewController
+        let balanceVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "groupDetail") as! GroupDetailViewController
         self.navigationController?.pushViewController(balanceVC, animated: true)
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -99,9 +85,9 @@ class ViewController: UIViewController {
 //        }
         //bank = UserDefaults.standard.object(forKey: "bank") as? centralBank ?? centralBank()
         loadBankData()
-//        bank.groups.append(group(name: "Group", members:["Dennis","Bill","Yifei","Timmy"]))
+//        bank.groups.append(Group(name: "Group", members:["Dennis","Bill","Yifei","Timmy"]))
 //        bank.currGroup = bank.groups[0]
-//        var tempTrans = transaction()
+//        var tempTrans = Transaction()
 //        tempTrans.date = Date.init(timeIntervalSince1970: 500)
 //        tempTrans.tranName = "TestTransaction"
 //        tempTrans.totalAmount = 30.5
@@ -116,8 +102,8 @@ class ViewController: UIViewController {
         presentGroup()
     }
     func presentGroup(){
-        let GroupsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "groupsViewController") as! groupsViewController
-        self.navigationController?.pushViewController(GroupsVC, animated: true)
+        let groupsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "groupsViewController") as! GroupsViewController
+        self.navigationController?.pushViewController(groupsVC, animated: true)
     }
     
     @IBOutlet weak var purchases: UITableView!
@@ -153,7 +139,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITableViewDelegate,UITableViewDataSource{
+extension HomeViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return bank.currGroup?.tranHistory.count ?? 0
     }
@@ -162,7 +148,7 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
         let t = bank.currGroup?.tranHistory[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "transaction") as! tableCell
         if ((t) != nil){
-            cell.setTransaction(trans: t!,parentVC:self)
+            cell.setTransaction(trans: t!,parentVC: self)
         }
         return cell
     }

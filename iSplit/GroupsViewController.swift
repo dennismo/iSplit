@@ -8,7 +8,7 @@
 
 import UIKit
 
-class grouptableCell :UITableViewCell{
+class GrouptableCell : UITableViewCell{
     @IBOutlet weak var memberNames: UILabel!
     
     @IBOutlet weak var groupName: UILabel!
@@ -17,21 +17,21 @@ class grouptableCell :UITableViewCell{
         bank.currGroup = cellGroup
         parentVC?.Exit()
     }
-    var parentVC:groupsViewController?
-    var cellGroup:group?
-    func setgroupTable(group: group,vc :groupsViewController){
+    var parentVC: GroupsViewController?
+    var cellGroup: Group?
+    func setgroupTable(group: Group,vc: GroupsViewController){
         parentVC = vc
         cellGroup = group
         groupName.text = group.groupName
-//        groupIcon.image = group.groupImage
+//        groupIcon.image = Group.groupImage
         memberNames.text = group.getMembers()
     }
 }
 
 
-class groupsViewController: UIViewController {
+class GroupsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    public var groups = [group]()
+    public var groups = [Group]()
     public func Exit(){
         self.navigationController?.popViewController(animated: true)
     }
@@ -39,7 +39,7 @@ class groupsViewController: UIViewController {
         self.Exit()
     }
     @IBAction func addGroup(_ sender: UIButton) {
-        let addGroupVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "addGroupViewController") as! addGroupViewController
+        let addGroupVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "addGroupViewController") as! AddGroupViewController
         self.present(addGroupVC, animated: true, completion: nil)
     }
     override func viewDidLoad() {
@@ -71,7 +71,7 @@ class groupsViewController: UIViewController {
     }
     
 }
-extension groupsViewController: UITableViewDelegate,UITableViewDataSource{
+extension GroupsViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return bank.groups.count
     }
@@ -80,7 +80,7 @@ extension groupsViewController: UITableViewDelegate,UITableViewDataSource{
 //    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let g = bank.groups[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Groups") as! grouptableCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Groups") as! GrouptableCell
         cell.setgroupTable(group: g,vc: self)
         return cell
     }

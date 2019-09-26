@@ -8,13 +8,13 @@
 
 import UIKit
 
-class usertableCell :UITableViewCell{
+class UsertableCell : UITableViewCell{
 
 
     @IBOutlet weak var memberName: UILabel!
     @IBOutlet weak var balance: UILabel!
-    var user:user?
-    func setuserTable(u: user){
+    var user: User?
+    func setuserTable(u: User){
         user = u
         memberName.text = u.name
         if(u.balance >= 0){
@@ -27,7 +27,7 @@ class usertableCell :UITableViewCell{
     
 }
 
-class groupDetailViewController: UIViewController {
+class GroupDetailViewController: UIViewController {
 
     
     @IBOutlet weak var gName: UILabel!
@@ -44,8 +44,8 @@ class groupDetailViewController: UIViewController {
         tableView.delegate = self
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated);
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         tableView.reloadData()
     }
     
@@ -60,13 +60,13 @@ class groupDetailViewController: UIViewController {
     }
     
 }
-extension groupDetailViewController: UITableViewDelegate,UITableViewDataSource{
+extension GroupDetailViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return bank.currGroup?.users.count ?? 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let g = (bank.currGroup?.users[indexPath.row])!
-        let cell = tableView.dequeueReusableCell(withIdentifier: "groupDetail") as! usertableCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "groupDetail") as! UsertableCell
         cell.setuserTable(u: g)
         return cell
     }

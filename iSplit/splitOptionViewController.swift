@@ -23,7 +23,7 @@ class SplitOptionCell: UITableViewCell {
             }
         }
     }
-//    public var bank.pendingTransaction.percent:Bool?{
+//    public var bank.pendingTransaction.percent: Bool?{
 //        didSet{
 //            if bank.pendingTransaction.percent == true {
 //                percentSign.text! = "%"
@@ -33,8 +33,8 @@ class SplitOptionCell: UITableViewCell {
 //            }
 //        }
 //    }
-    var user:user?
-    func setUser(u: user){
+    var user: User?
+    func setUser(u: User){
         user = u;
         memberName.text = u.name
     }

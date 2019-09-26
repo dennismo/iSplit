@@ -8,11 +8,11 @@
 
 import UIKit
 
-class memberBalance:UITableViewCell{
+class memberBalance: UITableViewCell{
     
     @IBOutlet weak var memberName: UILabel!
     @IBOutlet weak var balance: UILabel!
-    func setUserTable(u:user){
+    func setUserTable(u: User){
         memberName.text = u.name
         balance.text = "$" + String(u.balance)
         if u.balance >= 0 {
@@ -25,7 +25,7 @@ class memberBalance:UITableViewCell{
 }
 
 class DetailTransactionViewController: UIViewController{
-    public var trans = transaction()
+    public var trans = Transaction()
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var transName: UILabel!
     @IBAction func doneButton(_ sender: UIButton) {

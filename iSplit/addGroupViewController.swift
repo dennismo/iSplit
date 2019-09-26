@@ -1,15 +1,15 @@
 import UIKit
 
-class addGroupViewController: UIViewController {
+class AddGroupViewController: UIViewController {
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
     }
-    var g:group = group()
+    var g: Group = Group()
     @IBAction func addGroupButton(_ sender: UIButton) {
     bank.groups.append(g)
         dismiss(animated: true, completion: nil)
     }
-    func stringToNames(s:String) -> [String]{
+    func stringToNames(s: String) -> [String]{
         return s.components(separatedBy: ",")
     }
     
@@ -25,7 +25,7 @@ class addGroupViewController: UIViewController {
         g.users.removeAll()
         var ns = stringToNames(s: sender.text!)
         for i in 0...ns.count - 1 {
-            g.users.append(user(name: ns[i],id:i))
+            g.users.append(User(name: ns[i],id: i))
         }
     }
     @IBAction func addGroup(_ sender: UIButton) {
