@@ -24,16 +24,6 @@ func loadBankData() {
 }
 
 class User : Codable{
-//    func encode(with aCoder: NSCoder) {
-//        aCoder.encode(name,forKey: "name")
-//        aCoder.encode(balance,forKey:"balance")
-//    }
-//    
-//    required convenience init?(coder aDecoder: NSCoder) {
-//        self.init(name: "")
-//        self.name = aDecoder.decodeObject(forKey: "name") as! String
-//        self.balance = aDecoder.decodeDouble(forKey: "balance")
-//    }
     
     var name: String
     var balance: Double

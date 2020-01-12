@@ -23,8 +23,6 @@ class GrouptableCell : UITableViewCell{
         parentVC = vc
         cellGroup = group
         groupName.text = group.groupName
-//        groupIcon.image = Group.groupImage
-        memberNames.text = group.getMembers()
     }
 }
 
