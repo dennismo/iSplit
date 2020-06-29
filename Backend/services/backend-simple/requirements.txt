@@ -1,5 +1,0 @@
-flask
-flask_restful
-flask_script
-flask-cors
-boto3
