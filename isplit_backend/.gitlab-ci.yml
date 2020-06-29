@@ -41,14 +41,14 @@ deploy-stag:
   stage: deploy
   script: 
     - >
-      DOMAIN={{cookiecutter.domain_staging}}
-      TRAEFIK_TAG={{cookiecutter.traefik_constraint_tag_staging}}
-      STACK_NAME={{cookiecutter.docker_swarm_stack_name_staging}}
+      DOMAIN=stag.dennis-mo.com
+      TRAEFIK_TAG=stag.dennis-mo.com
+      STACK_NAME=stag-dennis-mo-com
       TAG=stag
       sh ./scripts/deploy.sh
   environment:
     name: staging
-    url: https://{{cookiecutter.domain_staging}}
+    url: https://stag.dennis-mo.com
   only:
     - master
   tags:
@@ -59,14 +59,14 @@ deploy-prod:
   stage: deploy
   script:
     - >
-      DOMAIN={{cookiecutter.domain_main}}
-      TRAEFIK_TAG={{cookiecutter.traefik_constraint_tag}}
-      STACK_NAME={{cookiecutter.docker_swarm_stack_name_main}}
+      DOMAIN=dennis-mo.com
+      TRAEFIK_TAG=dennis-mo.com
+      STACK_NAME=dennis-mo-com
       TAG=prod
       sh ./scripts/deploy.sh
   environment:
     name: production
-    url: https://{{cookiecutter.domain_main}}
+    url: https://dennis-mo.com
   only:
     - production
   tags:
