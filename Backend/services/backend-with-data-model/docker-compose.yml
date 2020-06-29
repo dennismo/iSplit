@@ -1,0 +1,17 @@
+version: '3'
+services:
+    
+  backend:
+    build: 
+      context: .
+      args: 
+        - APP_2_PORT
+    ports:
+      - "${APP_2_PORT}:${APP_2_PORT}"
+    environment:
+      - SERVICE_1_URL
+      - SERVICE_2_URL
+      - APP_1_CTX
+      - APP_1_PORT
+      - APP_2_CTX
+      - APP_2_PORT

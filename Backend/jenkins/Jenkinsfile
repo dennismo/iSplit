@@ -1,0 +1,60 @@
+@Library('sseb-pipeline-shared')
+import com.trgr.pipeline.sseb.PipelineHelper
+
+def helper = new PipelineHelper()
+
+pipeline {
+  agent any
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '5'))
+    disableConcurrentBuilds()
+  }
+  parameters { booleanParam(name: 'fullDeployment', defaultValue: false, description: 'When set, the applications will be completely undeployed and then deployed again. Otherwise only service task definitions, front-end and static data are updated. Activate when changing service definitions.') }
+  
+  stages {
+    // 'Init build' stage is required - this is where the project descriptor and configuration file(s)
+    // are read, parsed and validated. Without it the deployment (below) is likely not to work.
+    stage('Init build') { steps { 
+      script { 
+        helper.init( this, params.fullDeployment ) 
+      } 
+    } }
+
+    stage('Test Build') {
+      when { not { expression { return helper.doDeploy } } }
+      steps { script { helper.testBuild() } }
+    }
+    
+    // This is the main deployment stage - where all the magic happens - do not remove(!)
+    stage('Deploy') {
+      // These environment variables are orginally defined in Jenkins init stage. 
+      // Reference - https://git.sami.int.thomsonreuters.com/cloud-provisioning/sseb-pipeline-shared/blob/master/vars/config.groovy
+      environment {
+          SERVICE_1_URL = "http://${helper.projDescriptor.appCName}/${helper.projConfig.app1ctx}"
+          SERVICE_2_URL = "http://${helper.projDescriptor.appCName}/${helper.projConfig.app2ctx}"
+          APP_1_CTX = "${helper.projConfig.app1ctx}" // app1 is backend-simple
+          APP_1_PORT = "${helper.projConfig.app1port}"
+          APP_2_CTX = "${helper.projConfig.app2ctx}" // app2 is backend-with-data-model
+          APP_2_PORT = "${helper.projConfig.app2port}"
+      }
+      when { expression { return helper.doDeploy } }
+      steps { 
+        script { helper.deploy( params.fullDeployment ) } 
+      }
+    }
+  }
+  
+  post {
+    success {
+      script {
+        helper.sendMessage( "Build successful", "SUCCESS" )
+      }
+    }
+    failure {
+      script {
+        helper.sendMessage( "Build failed, please fix it", "FAILURE" )
+      }
+    }
+  }
+
+} //pipeline
