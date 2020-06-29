@@ -3,7 +3,20 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "ViewController.tableView(_:cellForRowAt:):ViewController.swift">
+         contextName = "SplitOptionViewController.splitOptionSwitch(_:):splitOptionViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "sender.selectedSegmentIndex">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "addViewController.settleUpButton(_:):addTransViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "bank.currGroup">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "groupsViewController.addGroup(_:):groupsViewController.swift">
@@ -12,6 +25,34 @@
                value = "navigationController">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "centralBank.newTransaction(trans:):appBrain.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "currGroup">
+            </PersistentString>
+            <PersistentString
+               value = "pendingTransaction">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SplitOptionCell.splitRatio(_:):splitOptionViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "sender.text">
+            </PersistentString>
+            <PersistentString
+               value = "bank.pendingTransaction.payTable">
+            </PersistentString>
+            <PersistentString
+               value = "user">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.tableView(_:cellForRowAt:):ViewController.swift">
       </ContextState>
       <ContextState
          contextName = "groupsViewController.viewDidAppear(_:):groupsViewController.swift">

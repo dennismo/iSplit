@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>iSplit.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>BDF35269779BE76D4F14EF80A173AFAABD421C37</string>
+				<key>dateExpires</key>
+				<string>3/18/21</string>
+				<key>type</key>
+				<string>iOS Distribution</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>M2H62N6SQK.laveseth.iSplit</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>M2H62N6SQK</string>
+				<key>get-task-allow</key>
+				<false/>
+				<key>keychain-access-groups</key>
+				<array>
+					<string>M2H62N6SQK.laveseth.iSplit</string>
+				</array>
+			</dict>
+			<key>name</key>
+			<string>iSplit.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>efec75a6-06a1-43ca-b2ce-c116ab8cb300</string>
+				<key>name</key>
+				<string>Xcode iOS Wildcard AppID</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>M2H62N6SQK</string>
+				<key>name</key>
+				<string>BMC Software, Inc.</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

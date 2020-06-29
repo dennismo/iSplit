@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserTableCell: UITableViewCell{
+class UsertableCell : UITableViewCell{
 
 
     @IBOutlet weak var memberName: UILabel!
@@ -44,17 +44,11 @@ class GroupDetailViewController: UIViewController {
         tableView.delegate = self
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated);
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         tableView.reloadData()
     }
-    override var shouldAutorotate: Bool {
-        return true
-    }
     
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .portrait
-    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -72,7 +66,7 @@ extension GroupDetailViewController: UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let g = (bank.currGroup?.users[indexPath.row])!
-        let cell = tableView.dequeueReusableCell(withIdentifier: "groupDetail") as! UserTableCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "groupDetail") as! UsertableCell
         cell.setuserTable(u: g)
         return cell
     }

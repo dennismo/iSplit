@@ -8,32 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		E656F9742299E20000800465 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656F9732299E20000800465 /* AppDelegate.swift */; };
-		E656F9762299E20000800465 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656F9752299E20000800465 /* ViewController.swift */; };
+		E656F9762299E20000800465 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656F9752299E20000800465 /* HomeViewController.swift */; };
 		E656F9792299E20000800465 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E656F9772299E20000800465 /* Main.storyboard */; };
 		E656F97B2299E20200800465 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E656F97A2299E20200800465 /* Assets.xcassets */; };
 		E656F97E2299E20200800465 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E656F97C2299E20200800465 /* LaunchScreen.storyboard */; };
-		E656F9862299F06800800465 /* AppBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656F9852299F06800800465 /* AppBrain.swift */; };
-		E656F988229A095600800465 /* AddTransViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656F987229A095600800465 /* AddTransViewController.swift */; };
+		E656F9862299F06800800465 /* appBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656F9852299F06800800465 /* appBrain.swift */; };
+		E656F988229A095600800465 /* addTransViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656F987229A095600800465 /* addTransViewController.swift */; };
 		E656F98A229A0B8A00800465 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656F989229A0B8A00800465 /* GroupsViewController.swift */; };
-		E656F98C229A0DA700800465 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656F98B229A0DA700800465 /* NavigationController.swift */; };
-		E6A5888B230F39DE00A7C9AE /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A5888A230F39DE00A7C9AE /* AddGroupViewController.swift */; };
+		E656F98C229A0DA700800465 /* navigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656F98B229A0DA700800465 /* navigationController.swift */; };
+		E686BD5B232236A200703CFF /* splitOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E686BD5A232236A200703CFF /* splitOptionViewController.swift */; };
+		E6A5888B230F39DE00A7C9AE /* addGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A5888A230F39DE00A7C9AE /* addGroupViewController.swift */; };
 		E6C02D49231726B700FEBEAB /* GroupDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C02D48231726B700FEBEAB /* GroupDetailViewController.swift */; };
+		E6D2CAC7232E8B8E008872D0 /* detailTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D2CAC6232E8B8E008872D0 /* detailTransactionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E656F9702299E20000800465 /* iSplit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSplit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E656F9732299E20000800465 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E656F9752299E20000800465 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E656F9752299E20000800465 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E656F9782299E20000800465 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E656F97A2299E20200800465 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E656F97D2299E20200800465 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E656F97F2299E20200800465 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E656F9852299F06800800465 /* AppBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBrain.swift; sourceTree = "<group>"; };
-		E656F987229A095600800465 /* AddTransViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransViewController.swift; sourceTree = "<group>"; };
+		E656F9852299F06800800465 /* appBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appBrain.swift; sourceTree = "<group>"; };
+		E656F987229A095600800465 /* addTransViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addTransViewController.swift; sourceTree = "<group>"; };
 		E656F989229A0B8A00800465 /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
-		E656F98B229A0DA700800465 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
-		E6A5888A230F39DE00A7C9AE /* AddGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupViewController.swift; sourceTree = "<group>"; };
+		E656F98B229A0DA700800465 /* navigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navigationController.swift; sourceTree = "<group>"; };
+		E686BD5A232236A200703CFF /* splitOptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = splitOptionViewController.swift; sourceTree = "<group>"; };
+		E6A5888A230F39DE00A7C9AE /* addGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addGroupViewController.swift; sourceTree = "<group>"; };
 		E6C02D48231726B700FEBEAB /* GroupDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailViewController.swift; sourceTree = "<group>"; };
+		E6D2CAC6232E8B8E008872D0 /* detailTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailTransactionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,52 +70,22 @@
 		E656F9722299E20000800465 /* iSplit */ = {
 			isa = PBXGroup;
 			children = (
-				EA8542BB2317727500ADF750 /* Model */,
-				EA8542BE231772DF00ADF750 /* Views */,
-				EA8542BD2317729F00ADF750 /* View Controllers */,
-				EA8542BF231772FD00ADF750 /* Other Files */,
+				E656F9732299E20000800465 /* AppDelegate.swift */,
+				E656F9852299F06800800465 /* appBrain.swift */,
+				E656F9752299E20000800465 /* HomeViewController.swift */,
+				E6D2CAC6232E8B8E008872D0 /* detailTransactionView.swift */,
+				E6C02D48231726B700FEBEAB /* GroupDetailViewController.swift */,
+				E656F987229A095600800465 /* addTransViewController.swift */,
+				E686BD5A232236A200703CFF /* splitOptionViewController.swift */,
+				E656F989229A0B8A00800465 /* GroupsViewController.swift */,
+				E6A5888A230F39DE00A7C9AE /* addGroupViewController.swift */,
+				E656F98B229A0DA700800465 /* navigationController.swift */,
+				E656F9772299E20000800465 /* Main.storyboard */,
+				E656F97A2299E20200800465 /* Assets.xcassets */,
+				E656F97C2299E20200800465 /* LaunchScreen.storyboard */,
 				E656F97F2299E20200800465 /* Info.plist */,
 			);
 			path = iSplit;
-			sourceTree = "<group>";
-		};
-		EA8542BB2317727500ADF750 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				E656F9852299F06800800465 /* AppBrain.swift */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		EA8542BD2317729F00ADF750 /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				E656F9752299E20000800465 /* ViewController.swift */,
-				E6C02D48231726B700FEBEAB /* GroupDetailViewController.swift */,
-				E656F987229A095600800465 /* AddTransViewController.swift */,
-				E656F989229A0B8A00800465 /* GroupsViewController.swift */,
-				E656F98B229A0DA700800465 /* NavigationController.swift */,
-				E6A5888A230F39DE00A7C9AE /* AddGroupViewController.swift */,
-			);
-			name = "View Controllers";
-			sourceTree = "<group>";
-		};
-		EA8542BE231772DF00ADF750 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				E656F9772299E20000800465 /* Main.storyboard */,
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
-		EA8542BF231772FD00ADF750 /* Other Files */ = {
-			isa = PBXGroup;
-			children = (
-				E656F9732299E20000800465 /* AppDelegate.swift */,
-				E656F97A2299E20200800465 /* Assets.xcassets */,
-				E656F97C2299E20200800465 /* LaunchScreen.storyboard */,
-			);
-			name = "Other Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,13 +159,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E656F9762299E20000800465 /* ViewController.swift in Sources */,
+				E656F9762299E20000800465 /* HomeViewController.swift in Sources */,
 				E6C02D49231726B700FEBEAB /* GroupDetailViewController.swift in Sources */,
-				E656F98C229A0DA700800465 /* NavigationController.swift in Sources */,
-				E656F9862299F06800800465 /* AppBrain.swift in Sources */,
-				E656F988229A095600800465 /* AddTransViewController.swift in Sources */,
+				E656F98C229A0DA700800465 /* navigationController.swift in Sources */,
+				E656F9862299F06800800465 /* appBrain.swift in Sources */,
+				E686BD5B232236A200703CFF /* splitOptionViewController.swift in Sources */,
+				E656F988229A095600800465 /* addTransViewController.swift in Sources */,
+				E6D2CAC7232E8B8E008872D0 /* detailTransactionView.swift in Sources */,
 				E656F9742299E20000800465 /* AppDelegate.swift in Sources */,
-				E6A5888B230F39DE00A7C9AE /* AddGroupViewController.swift in Sources */,
+				E6A5888B230F39DE00A7C9AE /* addGroupViewController.swift in Sources */,
 				E656F98A229A0B8A00800465 /* GroupsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,8 +314,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MRP7S474FP;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = M2H62N6SQK;
 				INFOPLIST_FILE = iSplit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -347,6 +324,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = laveseth.iSplit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Xcode iOS Wildcard AppID";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -356,8 +334,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MRP7S474FP;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = M2H62N6SQK;
 				INFOPLIST_FILE = iSplit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -365,6 +344,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = laveseth.iSplit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Xcode iOS Wildcard AppID";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
