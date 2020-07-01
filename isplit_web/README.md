@@ -1,4 +1,4 @@
-# iSplit_Backend
+# iSplit
 
 ## Backend Requirements
 
